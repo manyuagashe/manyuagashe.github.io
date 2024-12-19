@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="min-h-[80vh] flex items-center justify-center bg-unc-navy text-white px-4">
+    <section className="min-h-screen flex items-center justify-center bg-white text-unc-navy px-4">
       <div className="text-center">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold mb-4"
+          className="text-6xl md:text-7xl font-bold mb-6"
         >
           [Your Name]
         </motion.h1>
@@ -16,15 +16,15 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-carolina-blue text-xl md:text-2xl mb-8"
+          className="text-carolina-blue text-2xl md:text-3xl mb-8"
         >
-          Statistics B.S. + M.S. Student
+          Statistics Student
         </motion.p>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto"
+          className="text-gray-600 text-xl max-w-2xl mx-auto"
         >
           University of North Carolina at Chapel Hill
         </motion.p>
