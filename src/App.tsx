@@ -12,7 +12,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/your-repo-name">
         <Routes>
           <Route path="/" element={<Index />} />
         </Routes>
