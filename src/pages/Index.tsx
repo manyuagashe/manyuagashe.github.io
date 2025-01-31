@@ -1,10 +1,17 @@
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Education from "@/components/Education";
+import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
+
 const Index = () => {
   return (
     <main className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-center mb-8">Welcome to My Portfolio</h1>
-        <p className="text-center text-gray-600">This is a temporary message to verify the page is rendering correctly.</p>
-      </div>
+      <Hero />
+      <About />
+      <Education />
+      <Skills />
+      <Contact />
     </main>
   );
 };
