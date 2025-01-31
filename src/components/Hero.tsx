@@ -10,7 +10,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-6xl md:text-7xl font-bold mb-6"
         >
-          [Your Name]
+          abhimanyu "manyu" agashe
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -18,7 +18,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-carolina-blue text-2xl md:text-3xl mb-8"
         >
-          Statistics Student
+          statistics+computer science student, dev, (hopeful) builder
         </motion.p>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-gray-600 text-xl max-w-2xl mx-auto"
         >
-          University of North Carolina at Chapel Hill
+          university of north carolina at chapel hill
         </motion.p>
       </div>
     </section>
