@@ -12,8 +12,7 @@ const Education = () => {
               <li>Key Courses: [Course 1], [Course 2], [Course 3]</li>
             </ul>
           </div>
-        </div>
-      </div>
+        
     </section>
   );
 };
