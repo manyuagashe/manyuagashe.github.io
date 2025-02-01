@@ -8,7 +8,7 @@ const About = () => {
             I currently study <b>statistics/operations research/data science</b> with a minor in <b>computer science</b> and involvement in the philosophy department. I am interested in ideas that involve solving core issues in the field of education and how HCI impacts it. 
           </p>
           <p>
-            Through my coursework and research experiences, I've developed expertise in statistical analysis, data visualization, and machine learning. I'm particularly passionate about [your specific interests in statistics].
+            Via research, personal projects, and work outside and inside the classroom, I know my way well around major data science packages and have a good hand on full-stack development.
           </p>
           <p>
             When I'm not working with data, you can find me [your hobbies/interests]. I believe in [your philosophy/approach to work/studies].
