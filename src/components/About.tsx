@@ -11,7 +11,7 @@ const About = () => {
             Via research, personal projects, and work outside and inside the classroom, I know my way well around major data science packages and have a good hand on full-stack development.
           </p>
           <p>
-            When I'm not working with data, you can find me [your hobbies/interests]. I believe in [your philosophy/approach to work/studies].
+           i've started following competitive pokemon and Indian classical music recently. More seriously: industrial design, rationalism and OKR's.
           </p>
         </div>
       </div>
