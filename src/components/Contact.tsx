@@ -5,7 +5,7 @@ const Contact = () => {
         <h2 className="text-3xl font-bold text-unc-navy mb-8">Contact</h2>
         <div className="space-y-4 text-lg">
           <p className="text-gray-700">
-            Email: <a href="mailto:[your-email]" className="text-carolina-blue hover:underline">[your-email]</a>
+            Email: <a href="mailto:manyu@unc.edu" className="text-carolina-blue hover:underline">manyu@unc.edu</a>
           </p>
           <p className="text-gray-700">
             LinkedIn: <a href="[linkedin-url]" target="_blank" rel="noopener noreferrer" className="text-carolina-blue hover:underline">[Your LinkedIn]</a>
