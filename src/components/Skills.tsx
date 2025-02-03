@@ -1,12 +1,12 @@
 const Skills = () => {
   const skills = [
     { 
-      category: "Statistical Software", 
-      items: ["R", "SAS", "STATA", "SPSS"] 
+      category: "Statistics/Data Science", 
+      items: ["R", "Pandas", "SKlearn"] 
     },
     { 
       category: "Programming", 
-      items: ["Python", "SQL", "MATLAB", "Java"] 
+      items: ["Python", "SQL", "Java", "TypeScript"] 
     },
     { 
       category: "Data Analysis", 
