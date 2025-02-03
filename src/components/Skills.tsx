@@ -12,10 +12,6 @@ const Skills = () => {
       category: "Data Analysis", 
       items: ["Regression Analysis", "Time Series Analysis", "Machine Learning", "Data Visualization"] 
     },
-    { 
-      category: "Tools & Technologies", 
-      items: ["Git", "LaTeX", "Tableau", "Power BI"] 
-    },
   ];
 
   return (
