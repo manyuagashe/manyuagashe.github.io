@@ -24,7 +24,7 @@ const Navigation = () => {
             )}
             onClick={() => scrollToSection('about')}
           >
-            About
+            about
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -34,7 +34,7 @@ const Navigation = () => {
             )}
             onClick={() => scrollToSection('education')}
           >
-            Education
+            education
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -44,7 +44,7 @@ const Navigation = () => {
             )}
             onClick={() => scrollToSection('skills')}
           >
-            Skills
+            skills
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -54,7 +54,7 @@ const Navigation = () => {
             )}
             onClick={() => scrollToSection('contact')}
           >
-            Contact
+            contact
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
