@@ -15,12 +15,12 @@ const Navigation = () => {
   };
 
   return (
-    <NavigationMenu className="fixed top-4 right-4 z-50">
-      <NavigationMenuList>
+    <NavigationMenu className="fixed top-0 right-0 left-0 z-50 bg-white/80 backdrop-blur-sm border-b">
+      <NavigationMenuList className="container mx-auto px-4 py-4 flex justify-end gap-8">
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer shadow-sm"
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
             )}
             onClick={() => scrollToSection('about')}
           >
@@ -30,7 +30,7 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer shadow-sm"
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
             )}
             onClick={() => scrollToSection('education')}
           >
@@ -40,7 +40,7 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer shadow-sm"
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
             )}
             onClick={() => scrollToSection('skills')}
           >
@@ -50,7 +50,7 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer shadow-sm"
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
             )}
             onClick={() => scrollToSection('contact')}
           >
