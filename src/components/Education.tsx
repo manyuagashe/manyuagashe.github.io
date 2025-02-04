@@ -10,7 +10,7 @@ const Education = () => {
       
         <ul className="mt-4 text-gray-700 list-disc pl-4 space-y-2">
           <li><b>gpa</b>: 3.75, dean's list</li>
-          <li>key Courses: , [Course 2], [Course 3]</li>
+          <li>key courses: probability theory, theory and methods for machine learning, optimization, design patterns of code, systems fundamentals</li>
         </ul>
       </div>
     </section>
