@@ -10,7 +10,7 @@ const Skills = () => {
     },
     { 
       category: "Data Analysis", 
-      items: ["Regression Analysis", "Time Series Analysis", "Machine Learning", "Data Visualization"] 
+      items: ["Regression Analysis", "Machine Learning", "Data Visualization"] 
     },
   ];
 
