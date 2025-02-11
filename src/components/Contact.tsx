@@ -8,10 +8,10 @@ const Contact = () => {
             Email: <a href="mailto:manyu@unc.edu" className="text-carolina-blue hover:underline">manyu@unc.edu</a>
           </p>
           <p className="text-gray-700">
-            LinkedIn: <a href="[linkedin-url]" target="_blank" rel="noopener noreferrer" className="text-carolina-blue hover:underline">[Your LinkedIn]</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/abhimanyu-agashe-95598622a/" target="_blank" rel="noopener noreferrer" className="text-carolina-blue hover:underline">my linkedin</a>
           </p>
           <p className="text-gray-700">
-            GitHub: <a href="[github-url]" target="_blank" rel="noopener noreferrer" className="text-carolina-blue hover:underline">[Your GitHub]</a>
+            GitHub: <a href="https://github.com/manyuagashe" target="_blank" rel="noopener noreferrer" className="text-carolina-blue hover:underline">my github</a>
           </p>
         </div>
       </div>
