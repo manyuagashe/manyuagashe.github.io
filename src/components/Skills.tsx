@@ -12,6 +12,11 @@ const Skills = () => {
       category: "Data Analysis", 
       items: ["Regression Analysis", "Machine Learning", "Data Visualization"] 
     },
+
+    { 
+      category: "Other Tools for Dev/Non-Dev", 
+      items: ["Git(Hub), Jira, Tableau, Excel, AMPL"] 
+    },
   ];
 
   return (
