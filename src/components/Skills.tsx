@@ -15,7 +15,7 @@ const Skills = () => {
 
     { 
       category: "Other Tools for Dev/Non-Dev", 
-      items: ["Git(Hub), Jira, Tableau, Excel, AMPL"] 
+      items: ["Git(Hub)", "Jira", "Tableau", "Excel", "AMPL"] 
     },
   ];
 
