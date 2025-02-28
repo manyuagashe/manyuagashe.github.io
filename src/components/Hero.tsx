@@ -6,17 +6,55 @@ const Hero = () => {
   const [stars, setStars] = useState<{ x: number; y: number; delay: number; scale: number }[]>([]);
 
   useEffect(() => {
-    // Generate random stars
-    const newStars = [];
-    const numStars = 25; // Number of stars to generate
+    // Define a safe zone for text in the middle
+    const safeZoneVerticalStart = 30; // % from top
+    const safeZoneVerticalEnd = 70; // % from top
+    const safeZoneHorizontalStart = 20; // % from left
+    const safeZoneHorizontalEnd = 80; // % from left
     
-    for (let i = 0; i < numStars; i++) {
-      newStars.push({
-        x: Math.random() * 100, // Random x position (0-100%)
-        y: Math.random() * 100, // Random y position (0-100%)
-        delay: Math.random() * 5, // Random animation delay
-        scale: 0.5 + Math.random() * 1.5, // Random size
-      });
+    // Minimum distance between stars (in percentage of viewport)
+    const minDistanceBetweenStars = 10;
+    
+    const newStars = [];
+    const numStars = 25;
+    
+    // Helper function to check if a position is valid
+    const isValidPosition = (x: number, y: number) => {
+      // Check if inside text safe zone
+      if (x >= safeZoneHorizontalStart && x <= safeZoneHorizontalEnd && 
+          y >= safeZoneVerticalStart && y <= safeZoneVerticalEnd) {
+        return false;
+      }
+      
+      // Check if too close to any existing star
+      for (const star of newStars) {
+        const distance = Math.sqrt(Math.pow(star.x - x, 2) + Math.pow(star.y - y, 2));
+        if (distance < minDistanceBetweenStars) {
+          return false;
+        }
+      }
+      
+      return true;
+    };
+    
+    // Generate random stars with valid positions
+    let attempts = 0;
+    const maxAttempts = 200;
+    
+    while (newStars.length < numStars && attempts < maxAttempts) {
+      attempts++;
+      
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      
+      if (isValidPosition(x, y)) {
+        newStars.push({
+          x,
+          y,
+          delay: Math.random() * 5,
+          scale: 0.5 + Math.random() * 1.5,
+        });
+      }
     }
     
     setStars(newStars);
@@ -46,7 +84,7 @@ const Hero = () => {
         />
       ))}
       
-      <div className="text-center z-10">
+      <div className="text-center z-10 bg-white/30 backdrop-blur-sm py-10 px-8 rounded-lg">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
