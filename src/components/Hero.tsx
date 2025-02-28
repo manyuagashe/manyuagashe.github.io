@@ -84,7 +84,7 @@ const Hero = () => {
         />
       ))}
       
-      <div className="text-center z-10 bg-white/30 backdrop-blur-sm py-10 px-8 rounded-lg">
+      <div className="text-center z-10 py-10 px-8 rounded-lg">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
