@@ -4,6 +4,7 @@ import Education from "@/components/Education";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Navigation from "@/components/Navigation";
+import Pastwork from "@/components/Pastwork";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <Hero />
       <About />
       <Education />
+      <Pastwork />
       <Skills />
       <Contact />
     </main>
