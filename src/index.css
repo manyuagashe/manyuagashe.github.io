@@ -1,3 +1,6 @@
+
+@import url('https://fonts.cdnfonts.com/css/apple-garamond');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +99,25 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+}
+
+.star {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: black;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
 }
