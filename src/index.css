@@ -108,16 +108,8 @@
   width: 1rem;
   height: 1rem;
   background-color: black;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
+  /* Using radial gradient for a curved 4-point star */
+  mask-image: radial-gradient(circle at center, transparent 25%, black 25%, black 100%);
+  mask-size: 100% 100%;
+  clip-path: polygon(50% 0%, 62% 38%, 100% 38%, 68% 59%, 82% 100%, 50% 75%, 18% 100%, 32% 59%, 0% 38%, 38% 38%);
 }
