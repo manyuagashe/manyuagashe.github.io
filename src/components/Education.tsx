@@ -9,7 +9,7 @@ const Education = () => {
         {/* <p className="text-gray-600 mt-1">University of North Carolina at Chapel Hill</p>*/ }
       
         <ul className="mt-4 text-gray-700 list-disc pl-4 space-y-2">
-          <li><b>gpa</b>: 3.75, dean's list</li>
+          <li><b>gpa</b>: 3.77, dean's list</li>
           <li>key courses: probability theory, theory and methods for machine learning, optimization, design patterns of code, systems fundamentals</li>
         </ul>
       </div>
