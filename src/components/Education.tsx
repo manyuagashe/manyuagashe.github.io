@@ -3,7 +3,7 @@ const Education = () => {
   return (
     <section className="py-12 bg-white px-4 flex flex-col items-center" id="education">
       <h2 className="text-2xl font-bold text-unc-navy mb-8">education</h2>
-      <div className="border-l-4 border-carolina-blue pl-6 max-w-2xl">
+      <div className="border-l-4 border-carolina-blue pl-6 w-full max-w-2xl">
         <h3 className="text-2xl font-bold text-unc-navy">B.S. statistics/operations research, expected 2026</h3>
         <p className="text-carolina-blue text-lg mt-2">compsci minor, parr center for ethics member</p>
         
