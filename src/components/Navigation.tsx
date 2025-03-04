@@ -42,6 +42,16 @@ const Navigation = () => {
             className={cn(
               "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
             )}
+            onClick={() => scrollToSection('Pastwork')}
+          >
+            work ex
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            className={cn(
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
+            )}
             onClick={() => scrollToSection('skills')}
           >
             skills
