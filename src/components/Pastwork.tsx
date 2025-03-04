@@ -10,6 +10,8 @@ const Pastwork = () => {
         <ul className="mt-4 text-gray-700 list-disc pl-4 space-y-2">
           <li>AI alignment research</li>
           <li>exploring the intersectionality of LLM's with human rights principles</li>
+          <li>assisted in developing ethical frameworks for AI deployment</li>
+          <li>collaborated with cross-disciplinary teams on data justice initiatives</li>
         </ul>
       </div>
     </section>
