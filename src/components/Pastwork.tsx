@@ -1,8 +1,7 @@
-
 const Pastwork = () => {
   return (
     <section className="py-12 bg-gray-50 px-4 flex flex-col items-center" id="Pastwork">
-      <h2 className="text-2xl font-bold text-unc-navy mb-8 text-left w-full max-w-2xl">Work Exp</h2>
+      <h2 className="text-3xl font-bold text-unc-navy mb-12 text-left w-full max-w-2xl">Work Exp</h2>
       <div className="border-l-4 border-carolina-blue pl-6 w-full max-w-2xl space-y-8">
         <div>
           <h3 className="text-2xl font-bold text-unc-navy">student research intern</h3>
