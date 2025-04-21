@@ -6,51 +6,41 @@ const Hero = () => {
   const [stars, setStars] = useState<{ x: number; y: number; delay: number; scale: number }[]>([]);
 
   useEffect(() => {
-    const numStars = 12; // Further reduced number of stars
-
+    const numStars = 12;
     const newStars = [];
     
-    // Stars at top left corner (away from text area)
-    for (let i = 0; i < 3; i++) {
-      newStars.push({
-        x: 5 + i * 10,  // left edge (5%-25%)
-        y: 5 + Math.random() * 10, 
+    // Define the text area that should be avoided (approximate x, y percentages)
+    const textAreaX = { min: 25, max: 65 }; // middle section horizontally
+    const textAreaY = { min: 15, max: 60 }; // middle section vertically
+    
+    // Function to check if a position is within the text area
+    const isInTextArea = (x: number, y: number) => {
+      return x >= textAreaX.min && x <= textAreaX.max && y >= textAreaY.min && y <= textAreaY.max;
+    };
+    
+    // Function to generate a star position that avoids the text area
+    const generateStarPosition = () => {
+      let x, y;
+      do {
+        // Generate random positions across the entire area
+        x = 5 + Math.random() * 90;  // 5% to 95% width
+        y = 5 + Math.random() * 90;  // 5% to 95% height
+      } while (isInTextArea(x, y));
+      
+      return { 
+        x, 
+        y, 
         delay: Math.random() * 3,
-        scale: 0.3 + Math.random() * 0.6,
-      });
+        scale: 0.3 + Math.random() * 0.6 
+      };
+    };
+    
+    // Generate stars around the text area
+    for (let i = 0; i < numStars; i++) {
+      newStars.push(generateStarPosition());
     }
-
-    // Stars at top right corner (away from text area)
-    for (let i = 0; i < 3; i++) {
-      newStars.push({
-        x: 70 + i * 7,  // right edge (70%-90%)
-        y: 5 + Math.random() * 10,
-        delay: Math.random() * 3,
-        scale: 0.3 + Math.random() * 0.6,
-      });
-    }
-
-    // Stars at bottom left corner (away from text area)
-    for (let i = 0; i < 3; i++) {
-      newStars.push({
-        x: 5 + i * 10,  // left edge (5%-25%)
-        y: 65 + Math.random() * 15,
-        delay: Math.random() * 3,
-        scale: 0.3 + Math.random() * 0.6,
-      });
-    }
-
-    // Stars at bottom right corner (away from text area)
-    for (let i = 0; i < 3; i++) {
-      newStars.push({
-        x: 70 + i * 7,  // right edge (70%-90%)
-        y: 65 + Math.random() * 15,
-        delay: Math.random() * 3,
-        scale: 0.3 + Math.random() * 0.6,
-      });
-    }
-
-    setStars(newStars.slice(0, numStars));
+    
+    setStars(newStars);
   }, []);
 
   return (
