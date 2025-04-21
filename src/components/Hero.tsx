@@ -6,79 +6,51 @@ const Hero = () => {
   const [stars, setStars] = useState<{ x: number; y: number; delay: number; scale: number }[]>([]);
 
   useEffect(() => {
-    // Reduce number of stars
-    const numStars = 15; // Reduced from 25
-    
-    // Define a distribution pattern that surrounds the text rather than avoiding it
-    // We'll create a "frame" effect with stars placed mainly at the edges and some around the text
+    const numStars = 12; // Further reduced number of stars
+
     const newStars = [];
     
-    // Add stars to top area
+    // Stars at top left corner (away from text area)
     for (let i = 0; i < 3; i++) {
       newStars.push({
-        x: 10 + (i * 30), // Distribute across top
-        y: 5 + Math.random() * 10, // Near top
-        delay: Math.random() * 3,
-        scale: 0.4 + Math.random() * 0.8, // Smaller scale
-      });
-    }
-    
-    // Add stars to right side
-    for (let i = 0; i < 3; i++) {
-      newStars.push({
-        x: 80 + Math.random() * 15, // Right side
-        y: 20 + (i * 20), // Distribute vertically
-        delay: Math.random() * 3,
-        scale: 0.4 + Math.random() * 0.8,
-      });
-    }
-    
-    // Add stars to bottom area
-    for (let i = 0; i < 3; i++) {
-      newStars.push({
-        x: 15 + (i * 25), // Distribute across bottom
-        y: 75 + Math.random() * 15, // Near bottom
-        delay: Math.random() * 3,
-        scale: 0.4 + Math.random() * 0.8,
-      });
-    }
-    
-    // Add stars to left side
-    for (let i = 0; i < 3; i++) {
-      newStars.push({
-        x: 5 + Math.random() * 10, // Left side
-        y: 30 + (i * 15), // Distribute vertically
-        delay: Math.random() * 3,
-        scale: 0.4 + Math.random() * 0.8,
-      });
-    }
-    
-    // Add a few stars near the text to create a surrounding effect
-    newStars.push({
-      x: 40 + Math.random() * 20,
-      y: 30 + Math.random() * 10,
-      delay: Math.random() * 3,
-      scale: 0.3 + Math.random() * 0.6, // Even smaller near text
-    });
-    
-    newStars.push({
-      x: 45 + Math.random() * 15,
-      y: 60 + Math.random() * 10,
-      delay: Math.random() * 3,
-      scale: 0.3 + Math.random() * 0.6,
-    });
-    
-    // Add one more star if we haven't reached our limit
-    if (newStars.length < numStars) {
-      newStars.push({
-        x: 60 + Math.random() * 15,
-        y: 45 + Math.random() * 15,
+        x: 5 + i * 10,  // left edge (5%-25%)
+        y: 5 + Math.random() * 10, 
         delay: Math.random() * 3,
         scale: 0.3 + Math.random() * 0.6,
       });
     }
-    
-    setStars(newStars.slice(0, numStars)); // Ensure we don't exceed numStars
+
+    // Stars at top right corner (away from text area)
+    for (let i = 0; i < 3; i++) {
+      newStars.push({
+        x: 70 + i * 7,  // right edge (70%-90%)
+        y: 5 + Math.random() * 10,
+        delay: Math.random() * 3,
+        scale: 0.3 + Math.random() * 0.6,
+      });
+    }
+
+    // Stars at bottom left corner (away from text area)
+    for (let i = 0; i < 3; i++) {
+      newStars.push({
+        x: 5 + i * 10,  // left edge (5%-25%)
+        y: 65 + Math.random() * 15,
+        delay: Math.random() * 3,
+        scale: 0.3 + Math.random() * 0.6,
+      });
+    }
+
+    // Stars at bottom right corner (away from text area)
+    for (let i = 0; i < 3; i++) {
+      newStars.push({
+        x: 70 + i * 7,  // right edge (70%-90%)
+        y: 65 + Math.random() * 15,
+        delay: Math.random() * 3,
+        scale: 0.3 + Math.random() * 0.6,
+      });
+    }
+
+    setStars(newStars.slice(0, numStars));
   }, []);
 
   return (
@@ -95,7 +67,7 @@ const Hero = () => {
           }}
           animate={{
             opacity: [1, 0.5, 1],
-            y: [0, -8, 0], // Reduced movement
+            y: [0, -8, 0],
           }}
           transition={{
             duration: 3 + star.delay / 2,
