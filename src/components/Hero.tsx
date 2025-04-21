@@ -1,46 +1,72 @@
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+
+const NUM_STARS = 22;
 
 const Hero = () => {
-  const [stars, setStars] = useState<{ x: number; y: number; delay: number; scale: number }[]>([]);
+  const [stars, setStars] = useState<
+    { x: number; y: number; delay: number; scale: number }[]
+  >([]);
+  const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const numStars = 12;
-    const newStars = [];
-    
-    // Define the text area that should be avoided (approximate x, y percentages)
-    const textAreaX = { min: 25, max: 65 }; // middle section horizontally
-    const textAreaY = { min: 15, max: 60 }; // middle section vertically
-    
-    // Function to check if a position is within the text area
-    const isInTextArea = (x: number, y: number) => {
-      return x >= textAreaX.min && x <= textAreaX.max && y >= textAreaY.min && y <= textAreaY.max;
+    // Define the bounding box for text area in absolute px, based on the rendered text box
+    if (!textRef.current) return;
+
+    const textRect = textRef.current.getBoundingClientRect();
+
+    // Helper to check if x%,y% would fall inside the text area (on any screen size)
+    const isInTextArea = (xPct: number, yPct: number) => {
+      // get parent size
+      const parent = textRef.current?.parentElement;
+      if (!parent) return false;
+      const parentRect = parent.getBoundingClientRect();
+
+      const absX = parentRect.left + (xPct / 100) * parentRect.width;
+      const absY = parentRect.top + (yPct / 100) * parentRect.height;
+
+      // Slightly enlarge text rect for margin
+      const marginPx = 18;
+      return (
+        absX >= textRect.left - marginPx &&
+        absX <= textRect.right + marginPx &&
+        absY >= textRect.top - marginPx &&
+        absY <= textRect.bottom + marginPx
+      );
     };
-    
-    // Function to generate a star position that avoids the text area
+
+    // Generate a star absolutely *not* in text area
     const generateStarPosition = () => {
-      let x, y;
+      let x, y, tries = 0;
       do {
-        // Generate random positions across the entire area
-        x = 5 + Math.random() * 90;  // 5% to 95% width
-        y = 5 + Math.random() * 90;  // 5% to 95% height
+        x = Math.random() * 100; // 0-100%
+        y = Math.random() * 100;
+        tries++;
+        // Avoid infinite loop: after some tries, just spread further out
+        if (tries > 20) {
+          // place stars outside top/bottom/text, prioritizing Y
+          if (Math.random() > 0.5) {
+            y = Math.random() > 0.5 ? -8 : 108; // above or below visible box
+          } else {
+            x = Math.random() > 0.5 ? -8 : 108; // left or right of visible box
+          }
+        }
       } while (isInTextArea(x, y));
-      
-      return { 
-        x, 
-        y, 
-        delay: Math.random() * 3,
-        scale: 0.3 + Math.random() * 0.6 
+      return {
+        x,
+        y,
+        delay: Math.random() * 2.5,
+        scale: 0.3 + Math.random() * 0.7,
       };
     };
-    
-    // Generate stars around the text area
-    for (let i = 0; i < numStars; i++) {
+
+    const newStars = [];
+    for (let i = 0; i < NUM_STARS; i++) {
       newStars.push(generateStarPosition());
     }
-    
     setStars(newStars);
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -66,9 +92,12 @@ const Hero = () => {
           }}
         />
       ))}
-      
-      <div className="py-2 px-2 rounded-lg text-left w-full max-w-xl m-0 z-10 relative">
-        <motion.h1 
+
+      <div
+        ref={textRef}
+        className="py-2 px-2 rounded-lg text-left w-full max-w-xl m-0 z-10 relative"
+      >
+        <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -76,7 +105,7 @@ const Hero = () => {
         >
           abhimanyu "manyu" agashe
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -84,7 +113,7 @@ const Hero = () => {
         >
           statistics+computer science student, dev, (hopeful) builder
         </motion.p>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
