@@ -17,8 +17,8 @@ const Navigation = () => {
 
   return (
     <NavigationMenu className="fixed top-0 right-0 left-0 z-50 bg-white/80 backdrop-blur-sm border-b">
-      <NavigationMenuList className="container mx-auto px-2 py-2 flex justify-end gap-4">
-        {/* Smaller font, less padding, right aligned */}
+      <NavigationMenuList className="container mx-auto flex justify-end gap-4 py-2 px-2">
+        {/* Smaller font, less padding, explicitly right aligned */}
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
