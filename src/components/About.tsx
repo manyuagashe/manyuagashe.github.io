@@ -1,9 +1,10 @@
+
 const About = () => {
   return (
-    <section className="py-24 bg-gray-50 px-4" id="about">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-unc-navy mb-8">About Me</h2>
-        <div className="text-lg text-gray-700 space-y-6">
+    <section className="py-8 bg-gray-50 px-2" id="about">
+      <div className="max-w-xl">
+        <h2 className="text-lg font-bold text-unc-navy mb-3 text-left">About Me</h2>
+        <div className="text-sm text-gray-700 space-y-3 text-left">
           <p>
             I currently study <b>statistics/operations research/data science</b> with a minor in <b>computer science</b> and involvement in the philosophy department. I am interested in ideas that involve solving core issues in the field of education and how HCI impacts it. 
           </p>

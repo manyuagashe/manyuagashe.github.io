@@ -1,3 +1,4 @@
+
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -16,11 +17,12 @@ const Navigation = () => {
 
   return (
     <NavigationMenu className="fixed top-0 right-0 left-0 z-50 bg-white/80 backdrop-blur-sm border-b">
-      <NavigationMenuList className="container mx-auto px-4 py-4 flex justify-end gap-8">
+      <NavigationMenuList className="container mx-auto px-2 py-2 flex justify-end gap-4">
+        {/* Smaller font, less padding, right aligned */}
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-xs font-medium px-2 py-1"
             )}
             onClick={() => scrollToSection('about')}
           >
@@ -30,27 +32,27 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-xs font-medium px-2 py-1"
             )}
             onClick={() => scrollToSection('education')}
           >
-            education
+            Education
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-xs font-medium px-2 py-1"
             )}
             onClick={() => scrollToSection('Pastwork')}
           >
-            work ex
+            Work Ex
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-xs font-medium px-2 py-1"
             )}
             onClick={() => scrollToSection('skills')}
           >
@@ -60,7 +62,7 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuLink
             className={cn(
-              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-sm font-medium"
+              "text-gray-600 hover:text-carolina-blue transition-colors cursor-pointer text-xs font-medium px-2 py-1"
             )}
             onClick={() => scrollToSection('contact')}
           >

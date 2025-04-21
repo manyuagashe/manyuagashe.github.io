@@ -1,9 +1,10 @@
+
 const Contact = () => {
   return (
-    <section className="py-24 bg-white px-4" id="contact">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-unc-navy mb-8">Contact</h2>
-        <div className="space-y-4 text-lg">
+    <section className="py-8 bg-white px-2" id="contact">
+      <div className="max-w-xl text-left">
+        <h2 className="text-lg font-bold text-unc-navy mb-4">Contact</h2>
+        <div className="space-y-2 text-sm">
           <p className="text-gray-700">
             Email: <a href="mailto:manyu@unc.edu" className="text-carolina-blue hover:underline">manyu@unc.edu</a>
           </p>

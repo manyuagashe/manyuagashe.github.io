@@ -61,7 +61,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-[60vh] flex items-center justify-center bg-white text-unc-navy px-4 pt-16 relative overflow-hidden">
+    <section className="min-h-[38vh] flex items-center bg-white text-unc-navy px-2 pt-6 relative overflow-hidden text-left"> {/* smaller min-h, smaller px/pt */}
       {/* Stars */}
       {stars.map((star, index) => (
         <motion.div
@@ -84,28 +84,28 @@ const Hero = () => {
         />
       ))}
       
-      <div className="text-center z-10 py-10 px-8 rounded-lg">
+      <div className="py-2 px-2 rounded-lg text-left w-full max-w-xl m-0">
         <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-6xl md:text-7xl font-bold mb-6"
+          transition={{ duration: 0.6 }}
+          className="text-2xl md:text-3xl font-bold mb-3"
         >
           abhimanyu "manyu" agashe
         </motion.h1>
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-carolina-blue text-2xl md:text-3xl mb-8"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-carolina-blue text-base md:text-lg mb-5"
         >
           statistics+computer science student, dev, (hopeful) builder
         </motion.p>
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-gray-600 text-xl max-w-2xl mx-auto"
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="text-gray-600 text-sm max-w-2xl"
         >
           university of north carolina at chapel hill
         </motion.p>
