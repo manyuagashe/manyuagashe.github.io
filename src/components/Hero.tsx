@@ -1,5 +1,5 @@
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
 const NUM_STARS = 22;
@@ -9,6 +9,13 @@ const Hero = () => {
     { x: number; y: number; delay: number; scale: number }[]
   >([]);
   const textRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [1, 1, 0.8, 0.5]);
 
   useEffect(() => {
     // Define the bounding box for text area in absolute px, based on the rendered text box
@@ -70,7 +77,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-[38vh] flex items-center bg-white text-unc-navy px-2 pt-6 relative overflow-hidden text-left">
+    <motion.section 
+      ref={sectionRef}
+      style={{ y, opacity }}
+      className="min-h-[38vh] flex items-center bg-white text-unc-navy px-2 pt-6 relative overflow-hidden text-left"
+    >
       {/* Stars */}
       {stars.map((star, index) => (
         <motion.div
@@ -98,31 +109,31 @@ const Hero = () => {
         className="py-2 px-2 rounded-lg text-left w-full max-w-xl m-0 z-10 relative"
       >
         <motion.h1
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold mb-3"
+          transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
+          className="text-2xl md:text-3xl font-bold mb-3 hover:text-carolina-blue transition-colors duration-500"
         >
           abhimanyu "manyu" agashe
         </motion.h1>
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-carolina-blue text-base md:text-lg mb-5"
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.6, -0.05, 0.01, 0.99] }}
+          className="text-carolina-blue text-base md:text-lg mb-5 hover:scale-[1.02] transition-transform duration-500"
         >
           statistics+computer science student, dev, (hopeful) builder
         </motion.p>
         <motion.p
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="text-gray-600 text-sm max-w-2xl"
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.6, -0.05, 0.01, 0.99] }}
+          className="text-gray-600 text-sm max-w-2xl hover:text-unc-navy transition-colors duration-500"
         >
           university of north carolina at chapel hill
         </motion.p>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
