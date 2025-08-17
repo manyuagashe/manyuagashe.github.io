@@ -47,7 +47,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="hover:text-unc-navy transition-colors duration-300"
           >
-           i've started following competitive pokemon and Indian classical music recently. More seriously: industrial design, rationalism and OKR's.
+           i've started following competitive pokemon and Indian classical music recently. More seriously: industrial design, ethics, and John Doerr's ideas on OKRS.
           </motion.p>
         </div>
       </div>
