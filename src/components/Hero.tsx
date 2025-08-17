@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
-const NUM_STARS = 85;
+const NUM_STARS = 64;
 
 const Hero = () => {
   const [stars, setStars] = useState<
