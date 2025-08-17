@@ -185,7 +185,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.6, -0.05, 0.01, 0.99] }}
-          className="text-carolina-blue text-base md:text-lg mb-5 hover:scale-[1.02] transition-transform duration-500 drop-shadow-sm"
+          className="text-carolina-blue text-base md:text-lg mb-5 hover:scale-[1.033] transition-transform duration-500 drop-shadow-sm"
         >
           statistics+computer science student, dev, (hopeful) builder
         </motion.p>
