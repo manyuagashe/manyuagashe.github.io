@@ -51,7 +51,7 @@ const Education = () => {
           transition={{ duration: 0.5, delay: 1.0 }}
           className="mt-2 text-gray-700 list-disc pl-4 space-y-1 text-xs"
         >
-          <li className="hover:text-unc-navy transition-colors duration-300"><b>gpa</b>: 3.77, dean's list</li>
+          <li className="hover:text-unc-navy transition-colors duration-300"><b>gpa</b>: 3.83, dean's list</li>
           <li className="hover:text-unc-navy transition-colors duration-300">key courses: probability theory, theory and methods for machine learning, optimization, design patterns of code, systems fundamentals</li>
         </motion.ul>
       </motion.div>
