@@ -8,6 +8,16 @@ const Pastwork = () => {
 
   const workExperiences = [
     {
+      title: "data management summer intern",
+      company: "UBS Group AG",
+      items: [
+        "building custom analytics software for data issues at the bank",
+        "machine learning powered forecasting and categorization of issues",
+        "built automated workflows for speeding up vendor contract management processes",
+        "built a tool for automatic vulnerability remediation within the terminal"
+      ]
+    },
+    {
       title: "student research intern",
       company: "UNC School of Data Science and Society",
       items: [
@@ -26,17 +36,8 @@ const Pastwork = () => {
         "improved automated deployment pipelines and CI/CD",
         "conducted testing, code reviews, and contributed to API docs"
       ]
-    },
-    {
-      title: "web development intern",
-      company: "YM Global IT",
-      items: [
-        "developed responsive web applications using React and TypeScript",
-        "collaborated with UI/UX designers to implement pixel-perfect designs",
-        "optimized website performance and accessibility",
-        "participated in code reviews and agile development processes"
-      ]
     }
+   
   ];
 
   return (
