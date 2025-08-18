@@ -28,13 +28,13 @@ const Pastwork = () => {
       ]
     },
     {
-      title: "web development intern",
+      title: "app development intern",
       company: "YM Global IT",
       items: [
-        "built and maintained internal tools with React and TypeScript",
-        "collaborated with senior devs to modernize legacy modules",
-        "improved automated deployment pipelines and CI/CD",
-        "conducted testing, code reviews, and contributed to API docs"
+        "built flutter frontend for sports promotions app for client",
+        "worked with Django + SQLITE for backend",
+        "product management skills via leading frontend idea-to-feature pipeline"
+        
       ]
     }
    
