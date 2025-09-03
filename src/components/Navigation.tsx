@@ -18,7 +18,7 @@ const Navigation = () => {
   return (
     <NavigationMenu
       className={cn(
-        "fixed top-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b w-fit flex justify-end"
+        "fixed top-0 right-0 z-50 bg-glass-bg backdrop-blur-glass border border-glass-border shadow-glass w-fit flex justify-end"
       )}
       style={{ left: "auto", marginLeft: "auto", maxWidth: "none" }}
     >

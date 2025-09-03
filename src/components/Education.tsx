@@ -27,7 +27,7 @@ const Education = () => {
         initial={{ opacity: 0, x: 30 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="border-l-4 border-carolina-blue pl-4 w-full max-w-xl hover:border-unc-navy hover:shadow-lg hover:scale-[1.01] transition-all duration-500"
+        className="bg-glass-bg backdrop-blur-glass border-l-4 border-l-carolina-blue border border-glass-border shadow-glass rounded-lg p-4 w-full max-w-xl hover:border-l-unc-navy hover:shadow-xl hover:scale-[1.01] transition-all duration-500"
       >
         <motion.h3 
           initial={{ opacity: 0, y: 20 }}

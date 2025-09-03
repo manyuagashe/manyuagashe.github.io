@@ -49,7 +49,7 @@ const Skills = () => {
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1, ease: [0.6, -0.05, 0.01, 0.99] }}
-              className="bg-white p-3 rounded shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-500 hover:bg-carolina-blue/5"
+              className="bg-glass-bg backdrop-blur-glass border border-glass-border shadow-glass p-4 rounded-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-500 hover:border-carolina-blue/30"
             >
               <h3 className="text-base font-bold text-carolina-blue mb-2 hover:text-unc-navy transition-colors duration-300">{skillGroup.category}</h3>
               <ul className="space-y-1">

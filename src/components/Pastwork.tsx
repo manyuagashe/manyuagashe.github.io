@@ -64,7 +64,7 @@ const Pastwork = () => {
             initial={{ opacity: 0, x: 30, scale: 0.95 }}
             animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 30, scale: 0.95 }}
             transition={{ duration: 0.6, delay: 0.3 + index * 0.1, ease: [0.6, -0.05, 0.01, 0.99] }}
-            className="hover:shadow-lg hover:scale-[1.01] transition-all duration-500 hover:bg-white/50 p-3 rounded-lg"
+            className="hover:shadow-glass hover:scale-[1.01] transition-all duration-500 bg-glass-bg backdrop-blur-glass border border-glass-border p-4 rounded-lg hover:border-carolina-blue/30"
           >
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
