@@ -12,14 +12,14 @@ const Education = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
-      className="py-8 bg-white px-2 flex flex-col items-start hover:bg-gray-50 transition-colors duration-700" 
+      className="py-0 bg-transparent px-0 flex flex-col items-start" 
       id="education"
     >
       <motion.h2 
         initial={{ opacity: 0, x: -30 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-lg font-bold text-unc-navy mb-6 text-left w-full max-w-xl hover:text-carolina-blue transition-colors duration-500"
+        className="text-lg font-bold text-blue-navy mb-6 text-left w-full max-w-xl hover:text-blue-deep transition-colors duration-500"
       >
         Education
       </motion.h2>
@@ -27,7 +27,7 @@ const Education = () => {
         initial={{ opacity: 0, x: 30 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="bg-glass-bg backdrop-blur-glass border-l-4 border-l-carolina-blue border border-glass-border shadow-glass rounded-lg p-4 w-full max-w-xl hover:border-l-unc-navy hover:shadow-xl hover:scale-[1.01] transition-all duration-500"
+        className="bg-glass-bg backdrop-blur-glass border-l-4 border-l-blue-deep border border-glass-border rounded-lg p-6 w-full hover:border-l-blue-navy hover:scale-[1.02] transition-all duration-500 shadow-glass"
       >
         <motion.h3 
           initial={{ opacity: 0, y: 20 }}

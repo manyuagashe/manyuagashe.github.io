@@ -30,7 +30,7 @@ const Skills = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
-      className="py-8 bg-gray-50 px-2 hover:bg-gray-100 transition-colors duration-700" 
+      className="py-0 bg-transparent px-0" 
       id="skills"
     >
       <div className="max-w-xl">
@@ -38,7 +38,7 @@ const Skills = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg font-bold text-unc-navy mb-6 text-left hover:text-carolina-blue transition-colors duration-500"
+          className="text-lg font-bold text-blue-navy mb-6 text-left hover:text-blue-deep transition-colors duration-500"
         >
           Skills
         </motion.h2>
@@ -49,7 +49,7 @@ const Skills = () => {
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1, ease: [0.6, -0.05, 0.01, 0.99] }}
-              className="bg-glass-bg backdrop-blur-glass border border-glass-border shadow-glass p-4 rounded-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-500 hover:border-carolina-blue/30"
+              className="bg-glass-bg backdrop-blur-glass border border-glass-border p-6 rounded-lg hover:scale-[1.03] transition-all duration-500 hover:border-blue-medium shadow-glass"
             >
               <h3 className="text-base font-bold text-carolina-blue mb-2 hover:text-unc-navy transition-colors duration-300">{skillGroup.category}</h3>
               <ul className="space-y-1">

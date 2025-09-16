@@ -46,14 +46,14 @@ const Pastwork = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
-      className="py-8 bg-gray-50 px-2 flex flex-col items-start hover:bg-gray-100 transition-colors duration-700" 
+      className="py-0 bg-transparent px-0 flex flex-col items-start" 
       id="Pastwork"
     >
       <motion.h2 
         initial={{ opacity: 0, x: -30 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-lg font-bold text-unc-navy mb-6 text-left w-full max-w-xl hover:text-carolina-blue transition-colors duration-500"
+        className="text-lg font-bold text-blue-navy mb-6 text-left w-full max-w-xl hover:text-blue-deep transition-colors duration-500"
       >
         Work Ex
       </motion.h2>
@@ -64,7 +64,7 @@ const Pastwork = () => {
             initial={{ opacity: 0, x: 30, scale: 0.95 }}
             animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 30, scale: 0.95 }}
             transition={{ duration: 0.6, delay: 0.3 + index * 0.1, ease: [0.6, -0.05, 0.01, 0.99] }}
-            className="hover:shadow-glass hover:scale-[1.01] transition-all duration-500 bg-glass-bg backdrop-blur-glass border border-glass-border p-4 rounded-lg hover:border-carolina-blue/30"
+            className="hover:scale-[1.02] transition-all duration-500 bg-glass-bg backdrop-blur-glass border border-glass-border p-6 rounded-lg hover:border-blue-medium shadow-glass"
           >
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}

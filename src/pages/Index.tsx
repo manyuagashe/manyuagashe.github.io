@@ -14,9 +14,20 @@ const Index = () => {
       <div>
         <Hero />
         <About />
-        <Education />
-        <Pastwork />
-        <Skills />
+        {/* Two-column layout for Education/Skills + Work Experience */}
+        <section className="py-8 bg-white">
+          <div className="flex flex-col lg:flex-row gap-8 px-2">
+            {/* Left column: Education and Skills */}
+            <div className="flex-1 space-y-8">
+              <Education />
+              <Skills />
+            </div>
+            {/* Right column: Work Experience */}
+            <div className="flex-1">
+              <Pastwork />
+            </div>
+          </div>
+        </section>
         <Contact />
       </div>
     </main>
