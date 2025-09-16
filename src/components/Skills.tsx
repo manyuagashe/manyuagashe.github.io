@@ -49,10 +49,10 @@ const Skills = () => {
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1, ease: [0.6, -0.05, 0.01, 0.99] }}
-              className="bg-glass-bg backdrop-blur-glass border border-glass-border p-6 rounded-lg hover:scale-[1.03] transition-all duration-500 hover:border-blue-medium shadow-glass"
+              className="bg-glass-bg backdrop-blur-glass border border-glass-border p-4 rounded-lg hover:scale-[1.03] transition-all duration-500 hover:border-blue-medium shadow-glass"
             >
-              <h3 className="text-base font-bold text-carolina-blue mb-2 hover:text-unc-navy transition-colors duration-300">{skillGroup.category}</h3>
-              <ul className="space-y-1">
+              <h3 className="text-base font-bold text-carolina-blue mb-1 hover:text-unc-navy transition-colors duration-300">{skillGroup.category}</h3>
+              <ul className="space-y-0.5">
                 {skillGroup.items.map((item, itemIndex) => (
                   <motion.li 
                     key={item} 

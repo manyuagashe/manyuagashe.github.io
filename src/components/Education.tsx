@@ -27,7 +27,7 @@ const Education = () => {
         initial={{ opacity: 0, x: 30 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="bg-glass-bg backdrop-blur-glass border-l-4 border-l-blue-deep border border-glass-border rounded-lg p-6 w-full hover:border-l-blue-navy hover:scale-[1.02] transition-all duration-500 shadow-glass"
+        className="bg-glass-bg backdrop-blur-glass border-l-4 border-l-carolina-blue border border-glass-border rounded-lg p-4 w-full hover:border-l-blue-navy hover:scale-[1.02] transition-all duration-500 shadow-glass"
       >
         <motion.h3 
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ const Education = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 1.0 }}
-          className="mt-2 text-gray-700 list-disc pl-4 space-y-1 text-xs"
+          className="mt-1 text-gray-700 list-disc pl-3 space-y-0.5 text-xs"
         >
           <li className="hover:text-unc-navy transition-colors duration-300"><b>gpa</b>: 3.83, dean's list</li>
           <li className="hover:text-unc-navy transition-colors duration-300">key courses: probability theory, theory and methods for machine learning, optimization, design patterns of code, systems fundamentals</li>

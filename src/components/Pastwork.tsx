@@ -57,14 +57,14 @@ const Pastwork = () => {
       >
         Work Ex
       </motion.h2>
-      <div className="border-l-4 border-carolina-blue pl-4 w-full max-w-xl space-y-6">
+      <div className="border-l-4 border-carolina-blue pl-4 w-full max-w-xl space-y-4">
         {workExperiences.map((experience, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: 30, scale: 0.95 }}
             animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 30, scale: 0.95 }}
             transition={{ duration: 0.6, delay: 0.3 + index * 0.1, ease: [0.6, -0.05, 0.01, 0.99] }}
-            className="hover:scale-[1.02] transition-all duration-500 bg-glass-bg backdrop-blur-glass border border-glass-border p-6 rounded-lg hover:border-blue-medium shadow-glass"
+            className="hover:scale-[1.02] transition-all duration-500 bg-glass-bg backdrop-blur-glass border border-glass-border p-4 rounded-lg hover:border-blue-medium shadow-glass"
           >
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ const Pastwork = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-              className="mt-2 text-gray-700 list-disc pl-4 space-y-1 text-xs"
+              className="mt-1 text-gray-700 list-disc pl-3 space-y-0.5 text-xs"
             >
               {experience.items.map((item, itemIndex) => (
                 <motion.li
