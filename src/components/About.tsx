@@ -12,7 +12,7 @@ const About = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
-      className="py-8 bg-gray-50 px-2 hover:bg-gray-100 transition-colors duration-700" 
+      className="py-6 bg-gray-50 px-2 hover:bg-gray-100 transition-colors duration-700" 
       id="about"
     >
       <div className="max-w-xl">
@@ -24,7 +24,7 @@ const About = () => {
         >
           About Me
         </motion.h2>
-        <div className="text-sm text-gray-700 space-y-3 text-left">
+        <div className="text-sm text-gray-700 space-y-2 text-left">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

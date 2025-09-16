@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
-const NUM_STARS = 64;
+const NUM_STARS = 48;
 
 const Hero = () => {
   const [stars, setStars] = useState<
@@ -81,7 +81,7 @@ const Hero = () => {
     <motion.section 
       ref={sectionRef}
       style={{ y, opacity }}
-      className="min-h-[45vh] flex items-center bg-white text-unc-navy px-2 pt-6 relative overflow-hidden text-left"
+      className="min-h-[34vh] flex items-center bg-white text-unc-navy px-2 pt-6 relative overflow-hidden text-left"
     >
       {/* Landscape Background */}
       <div className="absolute inset-0 z-0">
