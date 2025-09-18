@@ -7,6 +7,7 @@ import SkillsWindow from "./windows/SkillsWindow";
 import WorkWindow from "./windows/WorkWindow";
 import ContactWindow from "./windows/ContactWindow";
 import TerminalWindow from "./windows/TerminalWindow";
+import HeroWindow from "./windows/HeroWindow";
 
 const WindowManager = () => {
   const { windows } = useWindows();
@@ -25,6 +26,8 @@ const WindowManager = () => {
         return <ContactWindow />;
       case 'terminal':
         return <TerminalWindow />;
+      case 'hero':
+        return <HeroWindow />;
       default:
         return <div className="p-4">Unknown window type</div>;
     }

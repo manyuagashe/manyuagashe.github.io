@@ -42,8 +42,35 @@ interface WindowProviderProps {
 }
 
 export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
-  const [windows, setWindows] = useState<WindowState[]>([]);
-  const [maxZIndex, setMaxZIndex] = useState(1000);
+  const [windows, setWindows] = useState<WindowState[]>([
+    {
+      id: 'hero',
+      title: 'Welcome',
+      component: 'hero',
+      isOpen: true,
+      isMinimized: false,
+      isMaximized: false,
+      x: 50,
+      y: 50,
+      width: 500,
+      height: 400,
+      zIndex: 1001
+    },
+    {
+      id: 'about',
+      title: 'About Me',
+      component: 'about',
+      isOpen: true,
+      isMinimized: false,
+      isMaximized: false,
+      x: 580,
+      y: 80,
+      width: 600,
+      height: 500,
+      zIndex: 1002
+    }
+  ]);
+  const [maxZIndex, setMaxZIndex] = useState(1002);
 
   const getNextZIndex = () => {
     setMaxZIndex(prev => prev + 1);

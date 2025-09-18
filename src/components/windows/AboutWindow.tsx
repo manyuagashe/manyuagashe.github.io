@@ -22,24 +22,18 @@ const AboutWindow = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-4 text-gray-700"
+          className="space-y-4 text-white"
         >
           <p className="leading-relaxed">
-            i'm manyu, an undergrad at unc chapel hill studying computer science and statistics. 
-            i'm passionate about building things that make a difference, whether that's through 
-            machine learning, web development, or data analysis.
+            I currently study <b>statistics/operations research/data science</b> with a minor in <b>computer science</b> and involvement in the philosophy department. I am interested in ideas that involve solving core issues in the field of education and how HCI impacts it.
           </p>
           
           <p className="leading-relaxed">
-            when i'm not coding, you can find me exploring new technologies, reading about the 
-            latest developments in ai, or working on personal projects that challenge me to 
-            learn something new.
+            Via research, personal projects, and work outside and inside the classroom, I know my way well around major data science packages and have a good hand on full-stack development.
           </p>
           
           <p className="leading-relaxed">
-            i believe in the power of technology to solve real-world problems and create 
-            meaningful experiences for people. every project i work on is an opportunity 
-            to learn, grow, and contribute to something bigger than myself.
+            i've started following competitive pokemon and Indian classical music recently. More seriously: industrial design, ethics, and John Doerr's ideas on OKRS.
           </p>
         </motion.div>
 
@@ -50,7 +44,7 @@ const AboutWindow = () => {
           className="mt-6 p-4 bg-gradient-to-r from-carolina-blue/10 to-blue-medium/10 rounded-lg border border-carolina-blue/20"
         >
           <h3 className="text-lg font-semibold text-carolina-blue mb-2">currently focused on</h3>
-          <ul className="space-y-1 text-sm text-gray-700">
+          <ul className="space-y-1 text-sm text-white">
             <li>• machine learning and ai applications</li>
             <li>• full-stack web development</li>
             <li>• data science and statistical modeling</li>
