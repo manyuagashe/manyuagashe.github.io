@@ -22,13 +22,13 @@ const EducationWindow = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gradient-to-r from-carolina-blue/10 to-blue-medium/10 border border-carolina-blue/20 rounded-lg p-4"
+          className="bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg p-4"
         >
           <div className="flex items-start justify-between mb-2">
             <h3 className="text-lg font-semibold text-carolina-blue">
               University of North Carolina at Chapel Hill
             </h3>
-            <span className="text-sm text-gray-600 bg-white/50 px-2 py-1 rounded">
+            <span className="text-sm text-white bg-white/20 px-2 py-1 rounded">
               2022 - 2026
             </span>
           </div>
@@ -37,7 +37,7 @@ const EducationWindow = () => {
             Bachelor of Science in Computer Science & Statistics
           </p>
           
-          <div className="space-y-2 text-sm text-gray-700">
+          <div className="space-y-2 text-sm text-white">
             <div className="flex items-center space-x-2">
               <span className="font-semibold">GPA:</span>
               <span>3.83, Dean's List</span>
@@ -60,13 +60,13 @@ const EducationWindow = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="bg-gradient-to-r from-blue-light/10 to-carolina-blue/10 border border-blue-light/20 rounded-lg p-4"
+          className="bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg p-4"
         >
           <h3 className="text-lg font-semibold text-blue-deep mb-2">Academic Interests</h3>
           <div className="grid grid-cols-2 gap-3 text-sm">
             <div className="space-y-1">
               <h4 className="font-medium text-carolina-blue">Computer Science</h4>
-              <ul className="text-gray-700 space-y-0.5">
+              <ul className="text-white space-y-0.5">
                 <li>• Machine Learning</li>
                 <li>• Software Engineering</li>
                 <li>• Data Structures</li>
@@ -74,7 +74,7 @@ const EducationWindow = () => {
             </div>
             <div className="space-y-1">
               <h4 className="font-medium text-carolina-blue">Statistics</h4>
-              <ul className="text-gray-700 space-y-0.5">
+              <ul className="text-white space-y-0.5">
                 <li>• Statistical Modeling</li>
                 <li>• Data Analysis</li>
                 <li>• Probability Theory</li>
