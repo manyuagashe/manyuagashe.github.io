@@ -84,7 +84,7 @@ const SkillsWindow = () => {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 1.0 + index * 0.1 }}
-                className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium"
+                className="inline-block bg-white/60 text-blue-navy px-3 py-1 rounded-full text-sm font-medium"
               >
                 {item}
               </motion.span>

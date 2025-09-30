@@ -13,10 +13,10 @@
     --card-foreground: 222.2 84% 4.9%;
     
     /* Glass effect tokens */
-    --glass-bg: 255 255 255;
-    --glass-border: 255 255 255;
-    --glass-shadow: 0 16px 40px rgba(75, 156, 211, 0.25), 0 8px 16px rgba(19, 41, 75, 0.15);
-    --glass-backdrop: blur(12px);
+    --glass-bg: 200 80% 85%;
+    --glass-border: 200 60% 90%;
+    --glass-shadow: 0 16px 40px rgba(75, 156, 211, 0.35), 0 8px 16px rgba(19, 41, 75, 0.25);
+    --glass-backdrop: blur(24px);
 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
@@ -60,10 +60,10 @@
     --card-foreground: 210 40% 98%;
     
     /* Glass effect tokens for dark mode */
-    --glass-bg: 255 255 255;
-    --glass-border: 255 255 255;
-    --glass-shadow: 0 16px 40px rgba(75, 156, 211, 0.15), 0 8px 16px rgba(0, 0, 0, 0.3);
-    --glass-backdrop: blur(16px);
+    --glass-bg: 200 70% 75%;
+    --glass-border: 200 60% 85%;
+    --glass-shadow: 0 16px 40px rgba(75, 156, 211, 0.25), 0 8px 16px rgba(0, 0, 0, 0.4);
+    --glass-backdrop: blur(28px);
 
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
