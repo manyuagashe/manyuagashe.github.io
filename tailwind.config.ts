@@ -55,8 +55,8 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         glass: {
-          bg: "hsl(var(--glass-bg) / 0.75)",
-          border: "hsl(var(--glass-border) / 0.6)",
+          bg: "hsl(var(--glass-bg) / 0.95)",
+          border: "hsl(var(--glass-border) / 0.8)",
         },
         "blue-light": "#ADD8FF",
         "blue-medium": "#7EBBFF", 

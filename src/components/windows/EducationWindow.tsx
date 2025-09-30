@@ -28,16 +28,16 @@ const EducationWindow = () => {
             <h3 className="text-lg font-semibold text-blue-navy">
               University of North Carolina at Chapel Hill
             </h3>
-            <span className="text-sm text-blue-navy bg-white/30 px-2 py-1 rounded">
+            <span className="text-sm text-blue-navy bg-white/40 px-2 py-1 rounded font-medium">
               2022 - 2026
             </span>
           </div>
           
-          <p className="text-blue-navy font-medium mb-3">
+          <p className="text-blue-navy font-semibold mb-3">
             Bachelor of Science in Computer Science & Statistics
           </p>
           
-          <div className="space-y-2 text-sm text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+          <div className="space-y-2 text-sm text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
             <div className="flex items-center space-x-2">
               <span className="font-semibold">GPA:</span>
               <span>3.83, Dean's List</span>
@@ -65,16 +65,16 @@ const EducationWindow = () => {
           <h3 className="text-lg font-semibold text-blue-navy mb-2">Academic Interests</h3>
           <div className="grid grid-cols-2 gap-3 text-sm">
             <div className="space-y-1">
-              <h4 className="font-medium text-blue-navy">Computer Science</h4>
-              <ul className="text-white space-y-0.5" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+              <h4 className="font-semibold text-blue-navy">Computer Science</h4>
+              <ul className="text-white space-y-0.5" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
                 <li>• Machine Learning</li>
                 <li>• Software Engineering</li>
                 <li>• Data Structures</li>
               </ul>
             </div>
             <div className="space-y-1">
-              <h4 className="font-medium text-blue-navy">Statistics</h4>
-              <ul className="text-white space-y-0.5" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+              <h4 className="font-semibold text-blue-navy">Statistics</h4>
+              <ul className="text-white space-y-0.5" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
                 <li>• Statistical Modeling</li>
                 <li>• Data Analysis</li>
                 <li>• Probability Theory</li>

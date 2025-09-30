@@ -60,7 +60,7 @@ const SkillsWindow = () => {
                       duration: 0.3, 
                       delay: 0.4 + index * 0.1 + itemIndex * 0.05 
                     }}
-                    className="inline-block bg-white/60 text-blue-navy px-3 py-1 rounded-full text-sm font-medium hover:bg-carolina-blue/20 hover:scale-105 transition-all duration-200 cursor-default"
+                    className="inline-block bg-white/70 text-blue-navy px-3 py-1 rounded-full text-sm font-semibold hover:bg-white/90 hover:scale-105 transition-all duration-200 cursor-default"
                   >
                     {item}
                   </motion.span>
@@ -84,7 +84,7 @@ const SkillsWindow = () => {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 1.0 + index * 0.1 }}
-                className="inline-block bg-white/60 text-blue-navy px-3 py-1 rounded-full text-sm font-medium"
+                className="inline-block bg-white/70 text-blue-navy px-3 py-1 rounded-full text-sm font-semibold"
               >
                 {item}
               </motion.span>

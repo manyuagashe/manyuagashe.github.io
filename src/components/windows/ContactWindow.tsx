@@ -62,7 +62,7 @@ const ContactWindow = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-white mb-6"
-          style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
+          style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}
         >
           I'm always interested in new opportunities, collaborations, and conversations about technology. 
           Feel free to reach out through any of the channels below!
@@ -91,12 +91,12 @@ const ContactWindow = () => {
                       target={contact.href.startsWith('http') ? '_blank' : undefined}
                       rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="text-white hover:text-carolina-blue transition-colors underline decoration-transparent hover:decoration-carolina-blue"
-                      style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
+                      style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}
                     >
                       {contact.value}
                     </a>
                   ) : (
-                    <p className="text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>{contact.value}</p>
+                    <p className="text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>{contact.value}</p>
                   )}
                 </div>
               </div>
@@ -111,7 +111,7 @@ const ContactWindow = () => {
           className="mt-8 p-4 bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg"
         >
           <h3 className="text-lg font-semibold text-blue-navy mb-2">Let's Connect!</h3>
-          <p className="text-sm text-white mb-3" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+          <p className="text-sm text-white mb-3" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
             Whether you want to discuss a project, share ideas about technology, or just say hello, 
             I'd love to hear from you.
           </p>
