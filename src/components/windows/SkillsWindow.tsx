@@ -32,7 +32,7 @@ const SkillsWindow = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-2xl font-bold text-carolina-blue mb-6"
+          className="text-2xl font-bold text-blue-navy mb-6"
         >
           Skills & Technologies
         </motion.h2>
@@ -44,9 +44,9 @@ const SkillsWindow = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className="bg-gradient-to-r from-carolina-blue/10 to-blue-medium/10 border border-carolina-blue/20 rounded-lg p-4 hover:scale-[1.02] transition-all duration-300"
+              className="bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg p-4 hover:scale-[1.02] transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-carolina-blue mb-3">
+              <h3 className="text-lg font-semibold text-blue-navy mb-3">
                 {skillGroup.category}
               </h3>
               
@@ -60,7 +60,7 @@ const SkillsWindow = () => {
                       duration: 0.3, 
                       delay: 0.4 + index * 0.1 + itemIndex * 0.05 
                     }}
-                    className="inline-block bg-white/60 text-blue-deep px-3 py-1 rounded-full text-sm font-medium hover:bg-carolina-blue/20 hover:scale-105 transition-all duration-200 cursor-default"
+                    className="inline-block bg-white/60 text-blue-navy px-3 py-1 rounded-full text-sm font-medium hover:bg-carolina-blue/20 hover:scale-105 transition-all duration-200 cursor-default"
                   >
                     {item}
                   </motion.span>
@@ -74,9 +74,9 @@ const SkillsWindow = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-6 p-4 bg-gradient-to-r from-blue-light/10 to-carolina-blue/10 border border-blue-light/20 rounded-lg"
+          className="mt-6 p-4 bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg"
         >
-          <h3 className="text-lg font-semibold text-blue-deep mb-2">Currently Learning</h3>
+          <h3 className="text-lg font-semibold text-blue-navy mb-2">Currently Learning</h3>
           <div className="flex flex-wrap gap-2">
             {["Rust", "GraphQL", "Kubernetes", "Machine Learning Engineering"].map((item, index) => (
               <motion.span

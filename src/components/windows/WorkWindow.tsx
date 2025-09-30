@@ -46,7 +46,7 @@ const WorkWindow = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-2xl font-bold text-carolina-blue mb-6"
+          className="text-2xl font-bold text-blue-navy mb-6"
         >
           Work Experience
         </motion.h2>
@@ -58,18 +58,18 @@ const WorkWindow = () => {
               initial={{ opacity: 0, x: 30, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className="bg-gradient-to-r from-carolina-blue/10 to-blue-medium/10 border border-carolina-blue/20 rounded-lg p-4 hover:scale-[1.02] transition-all duration-300"
+              className="bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg p-4 hover:scale-[1.02] transition-all duration-300"
             >
               <div className="flex items-start justify-between mb-2">
                 <div>
-                  <h3 className="text-lg font-semibold text-carolina-blue">
+                  <h3 className="text-lg font-semibold text-blue-navy">
                     {experience.position}
                   </h3>
-                  <p className="text-blue-deep font-medium">
+                  <p className="text-blue-navy font-medium">
                     {experience.company}
                   </p>
                 </div>
-                <span className="text-sm text-gray-600 bg-white/50 px-2 py-1 rounded whitespace-nowrap">
+                <span className="text-sm text-white bg-white/20 px-2 py-1 rounded whitespace-nowrap">
                   {experience.duration}
                 </span>
               </div>
@@ -78,7 +78,8 @@ const WorkWindow = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="space-y-1 text-sm text-gray-700"
+                className="space-y-1 text-sm text-white"
+                style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
               >
                 {experience.items.map((item, itemIndex) => (
                   <motion.li
@@ -104,10 +105,10 @@ const WorkWindow = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-6 p-4 bg-gradient-to-r from-blue-light/10 to-carolina-blue/10 border border-blue-light/20 rounded-lg"
+          className="mt-6 p-4 bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg"
         >
-          <h3 className="text-lg font-semibold text-blue-deep mb-2">Looking Forward</h3>
-          <p className="text-sm text-gray-700">
+          <h3 className="text-lg font-semibold text-blue-navy mb-2">Looking Forward</h3>
+          <p className="text-sm text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
             I'm actively seeking internship opportunities for Summer 2025 in software engineering, 
             data science, or machine learning roles where I can apply my skills and continue learning 
             from experienced professionals.

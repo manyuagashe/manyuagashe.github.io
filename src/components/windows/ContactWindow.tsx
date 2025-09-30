@@ -52,7 +52,7 @@ const ContactWindow = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-2xl font-bold text-carolina-blue mb-6"
+          className="text-2xl font-bold text-blue-navy mb-6"
         >
           Get In Touch
         </motion.h2>
@@ -61,7 +61,8 @@ const ContactWindow = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-gray-700 mb-6"
+          className="text-white mb-6"
+          style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
         >
           I'm always interested in new opportunities, collaborations, and conversations about technology. 
           Feel free to reach out through any of the channels below!
@@ -74,14 +75,14 @@ const ContactWindow = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="bg-gradient-to-r from-carolina-blue/10 to-blue-medium/10 border border-carolina-blue/20 rounded-lg p-4 hover:scale-[1.02] transition-all duration-300 group"
+              className="bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg p-4 hover:scale-[1.02] transition-all duration-300 group"
             >
               <div className="flex items-center space-x-4">
                 <div className={`p-2 rounded-lg bg-white/50 ${contact.color}`}>
                   <contact.icon size={20} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-carolina-blue group-hover:text-blue-deep transition-colors">
+                  <h3 className="font-semibold text-blue-navy group-hover:text-blue-deep transition-colors">
                     {contact.label}
                   </h3>
                   {contact.href ? (
@@ -89,12 +90,13 @@ const ContactWindow = () => {
                       href={contact.href}
                       target={contact.href.startsWith('http') ? '_blank' : undefined}
                       rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-gray-700 hover:text-carolina-blue transition-colors underline decoration-transparent hover:decoration-carolina-blue"
+                      className="text-white hover:text-carolina-blue transition-colors underline decoration-transparent hover:decoration-carolina-blue"
+                      style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
                     >
                       {contact.value}
                     </a>
                   ) : (
-                    <p className="text-gray-700">{contact.value}</p>
+                    <p className="text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>{contact.value}</p>
                   )}
                 </div>
               </div>
@@ -106,10 +108,10 @@ const ContactWindow = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-8 p-4 bg-gradient-to-r from-blue-light/10 to-carolina-blue/10 border border-blue-light/20 rounded-lg"
+          className="mt-8 p-4 bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg"
         >
-          <h3 className="text-lg font-semibold text-blue-deep mb-2">Let's Connect!</h3>
-          <p className="text-sm text-gray-700 mb-3">
+          <h3 className="text-lg font-semibold text-blue-navy mb-2">Let's Connect!</h3>
+          <p className="text-sm text-white mb-3" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
             Whether you want to discuss a project, share ideas about technology, or just say hello, 
             I'd love to hear from you.
           </p>

@@ -9,6 +9,12 @@ const TerminalWindow = () => {
     ""
   ]);
   const [currentPath, setCurrentPath] = useState("~");
+  const [fileSystem] = useState<Record<string, string>>({
+    "about.txt": "Manyu - Computer Science & Statistics Student at UNC Chapel Hill",
+    "education.txt": "University of North Carolina at Chapel Hill (2022-2026)\nGPA: 3.83 (Dean's List)",
+    "skills.txt": "Python, JavaScript, TypeScript, Java, R, SQL, C++",
+    "contact.txt": "Email: manyu@unc.edu\nGitHub: github.com/manyu\nLinkedIn: linkedin.com/in/manyu",
+  });
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
 
@@ -70,7 +76,36 @@ const TerminalWindow = () => {
     clear: () => null,
     whoami: () => ["manyu", ""],
     date: () => [new Date().toString(), ""],
-    echo: (args: string[]) => [args.join(" "), ""]
+    echo: (args: string[]) => [args.join(" "), ""],
+    cd: (args: string[]) => {
+      if (args.length === 0) {
+        setCurrentPath("~");
+        return ["", ""];
+      }
+      const dir = args[0];
+      if (dir === "~" || dir === "/") {
+        setCurrentPath("~");
+        return ["", ""];
+      }
+      if (dir === "..") {
+        setCurrentPath("~");
+        return ["", ""];
+      }
+      return [`cd: ${dir}: No such file or directory`, ""];
+    },
+    mkdir: (args: string[]) => {
+      return ["mkdir: Permission denied - only manyu has access!", ""];
+    },
+    cat: (args: string[]) => {
+      if (args.length === 0) {
+        return ["cat: missing file operand", ""];
+      }
+      const filename = args[0];
+      if (fileSystem[filename]) {
+        return [fileSystem[filename], ""];
+      }
+      return [`cat: ${filename}: No such file or directory`, ""];
+    }
   };
 
   const handleCommand = (cmd: string) => {
@@ -121,7 +156,7 @@ const TerminalWindow = () => {
 
   return (
     <div 
-      className="h-full bg-gray-900 text-green-400 font-mono text-sm p-4 overflow-hidden flex flex-col"
+      className="h-full bg-gray-900 text-carolina-blue font-mono text-sm p-4 overflow-hidden flex flex-col"
       onClick={() => inputRef.current?.focus()}
     >
       <div 
@@ -142,7 +177,7 @@ const TerminalWindow = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="flex items-center">
-        <span className="text-green-400 mr-2">
+        <span className="text-carolina-blue mr-2">
           manyu@manyuOS:{currentPath}$
         </span>
         <input
@@ -150,14 +185,14 @@ const TerminalWindow = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="flex-1 bg-transparent text-green-400 outline-none caret-green-400"
+          className="flex-1 bg-transparent text-carolina-blue outline-none caret-carolina-blue"
           spellCheck={false}
           autoComplete="off"
         />
         <motion.div
           animate={{ opacity: [1, 0] }}
           transition={{ duration: 1, repeat: Infinity }}
-          className="w-2 h-4 bg-green-400 ml-1"
+          className="w-2 h-4 bg-carolina-blue ml-1"
         />
       </form>
     </div>

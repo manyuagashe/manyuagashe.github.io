@@ -13,7 +13,7 @@ const EducationWindow = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-2xl font-bold text-carolina-blue mb-6"
+          className="text-2xl font-bold text-blue-navy mb-6"
         >
           Education
         </motion.h2>
@@ -25,7 +25,7 @@ const EducationWindow = () => {
           className="bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg p-4"
         >
           <div className="flex items-start justify-between mb-2">
-            <h3 className="text-lg font-semibold text-carolina-blue">
+            <h3 className="text-lg font-semibold text-blue-navy">
               University of North Carolina at Chapel Hill
             </h3>
             <span className="text-sm text-white bg-white/20 px-2 py-1 rounded">
@@ -62,10 +62,10 @@ const EducationWindow = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg p-4"
         >
-          <h3 className="text-lg font-semibold text-blue-deep mb-2">Academic Interests</h3>
+          <h3 className="text-lg font-semibold text-blue-navy mb-2">Academic Interests</h3>
           <div className="grid grid-cols-2 gap-3 text-sm">
             <div className="space-y-1">
-              <h4 className="font-medium text-carolina-blue">Computer Science</h4>
+              <h4 className="font-medium text-blue-navy">Computer Science</h4>
               <ul className="text-white space-y-0.5">
                 <li>• Machine Learning</li>
                 <li>• Software Engineering</li>
@@ -73,7 +73,7 @@ const EducationWindow = () => {
               </ul>
             </div>
             <div className="space-y-1">
-              <h4 className="font-medium text-carolina-blue">Statistics</h4>
+              <h4 className="font-medium text-blue-navy">Statistics</h4>
               <ul className="text-white space-y-0.5">
                 <li>• Statistical Modeling</li>
                 <li>• Data Analysis</li>
