@@ -82,7 +82,7 @@ const Window = ({ id, title, children, isMaximized }: WindowProps) => {
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
         
-        <h3 className="text-sm font-medium text-white truncate mx-4">{title}</h3>
+        <h3 className="text-sm font-medium text-blue-navy truncate mx-4">{title}</h3>
         
         <div className="flex items-center space-x-1">
           <button

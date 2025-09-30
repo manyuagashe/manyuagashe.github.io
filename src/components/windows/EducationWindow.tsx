@@ -37,12 +37,12 @@ const EducationWindow = () => {
             Bachelor of Science in Computer Science & Statistics
           </p>
           
-          <div className="space-y-2 text-sm text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
+          <div className="space-y-2 text-sm text-black">
             <div className="flex items-center space-x-2">
               <span className="font-semibold">GPA:</span>
               <span>3.83, Dean's List</span>
             </div>
-            
+
             <div>
               <span className="font-semibold block mb-1">Key Courses:</span>
               <ul className="list-disc list-inside space-y-0.5 ml-2">
@@ -66,7 +66,7 @@ const EducationWindow = () => {
           <div className="grid grid-cols-2 gap-3 text-sm">
             <div className="space-y-1">
               <h4 className="font-semibold text-blue-navy">Computer Science</h4>
-              <ul className="text-white space-y-0.5" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
+              <ul className="text-black space-y-0.5">
                 <li>• Machine Learning</li>
                 <li>• Software Engineering</li>
                 <li>• Data Structures</li>
@@ -74,7 +74,7 @@ const EducationWindow = () => {
             </div>
             <div className="space-y-1">
               <h4 className="font-semibold text-blue-navy">Statistics</h4>
-              <ul className="text-white space-y-0.5" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
+              <ul className="text-black space-y-0.5">
                 <li>• Statistical Modeling</li>
                 <li>• Data Analysis</li>
                 <li>• Probability Theory</li>

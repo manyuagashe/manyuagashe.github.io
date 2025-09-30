@@ -78,8 +78,7 @@ const WorkWindow = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="space-y-1 text-sm text-white"
-                style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
+                className="space-y-1 text-sm text-black"
               >
                 {experience.items.map((item, itemIndex) => (
                   <motion.li
@@ -108,9 +107,9 @@ const WorkWindow = () => {
           className="mt-6 p-4 bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg"
         >
           <h3 className="text-lg font-semibold text-blue-navy mb-2">Looking Forward</h3>
-          <p className="text-sm text-white" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
-            I'm actively seeking internship opportunities for Summer 2025 in software engineering, 
-            data science, or machine learning roles where I can apply my skills and continue learning 
+          <p className="text-sm text-black">
+            I'm actively seeking internship opportunities for Summer 2025 in software engineering,
+            data science, or machine learning roles where I can apply my skills and continue learning
             from experienced professionals.
           </p>
         </motion.div>
