@@ -42,6 +42,13 @@ interface WindowProviderProps {
 }
 
 export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
+  // Calculate grid layout for 2x2 windows
+  const gridMargin = 20;
+  const gridGap = 20;
+  const taskbarHeight = 60;
+  const windowWidth = (window.innerWidth - gridMargin * 2 - gridGap) / 2;
+  const windowHeight = (window.innerHeight - gridMargin - taskbarHeight - gridGap) / 2;
+
   const [windows, setWindows] = useState<WindowState[]>([
     {
       id: 'hero',
@@ -50,10 +57,10 @@ export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
       isOpen: true,
       isMinimized: false,
       isMaximized: false,
-      x: 50,
-      y: 50,
-      width: 480,
-      height: 380,
+      x: gridMargin,
+      y: gridMargin,
+      width: windowWidth,
+      height: windowHeight,
       zIndex: 1001
     },
     {
@@ -63,10 +70,10 @@ export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
       isOpen: true,
       isMinimized: false,
       isMaximized: false,
-      x: 550,
-      y: 50,
-      width: 480,
-      height: 380,
+      x: gridMargin + windowWidth + gridGap,
+      y: gridMargin,
+      width: windowWidth,
+      height: windowHeight,
       zIndex: 1002
     },
     {
@@ -76,10 +83,10 @@ export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
       isOpen: true,
       isMinimized: false,
       isMaximized: false,
-      x: 50,
-      y: 450,
-      width: 480,
-      height: 380,
+      x: gridMargin,
+      y: gridMargin + windowHeight + gridGap,
+      width: windowWidth,
+      height: windowHeight,
       zIndex: 1003
     },
     {
@@ -89,10 +96,10 @@ export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
       isOpen: true,
       isMinimized: false,
       isMaximized: false,
-      x: 550,
-      y: 450,
-      width: 480,
-      height: 380,
+      x: gridMargin + windowWidth + gridGap,
+      y: gridMargin + windowHeight + gridGap,
+      width: windowWidth,
+      height: windowHeight,
       zIndex: 1004
     }
   ]);
