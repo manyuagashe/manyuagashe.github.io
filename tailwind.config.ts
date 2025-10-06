@@ -70,7 +70,7 @@ export default {
         glass: "var(--glass-shadow)",
       },
       fontFamily: {
-        sans: ["Apple Garamond", "Garamond", "Times New Roman", "serif"],
+        sans: ["-apple-system", "BlinkMacSystemFont", "SF Pro Text", "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

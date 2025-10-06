@@ -15,12 +15,12 @@ const Taskbar = () => {
   const { windows, openWindow, restoreWindow } = useWindows();
 
   const apps = [
-    { id: 'about', title: 'About Me', component: 'about', icon: User, color: 'text-carolina-blue' },
-    { id: 'education', title: 'Education', component: 'education', icon: GraduationCap, color: 'text-blue-medium' },
-    { id: 'skills', title: 'Skills', component: 'skills', icon: Code, color: 'text-blue-deep' },
+    { id: 'about', title: 'About Me', component: 'about', icon: User, color: 'text-unc-navy' },
+    { id: 'education', title: 'Education', component: 'education', icon: GraduationCap, color: 'text-unc-navy' },
+    { id: 'skills', title: 'Skills', component: 'skills', icon: Code, color: 'text-unc-navy' },
     { id: 'work', title: 'Work Experience', component: 'work', icon: Briefcase, color: 'text-unc-navy' },
-    { id: 'contact', title: 'Contact', component: 'contact', icon: Mail, color: 'text-blue-light' },
-    { id: 'terminal', title: 'Terminal', component: 'terminal', icon: Terminal, color: 'text-green-400' },
+    { id: 'contact', title: 'Contact', component: 'contact', icon: Mail, color: 'text-unc-navy' },
+    { id: 'terminal', title: 'Terminal', component: 'terminal', icon: Terminal, color: 'text-unc-navy' },
   ];
 
   const handleAppClick = (app: typeof apps[0]) => {
@@ -99,14 +99,14 @@ const Taskbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Folder size={16} className="text-blue-light" />
+            <Folder size={16} className="text-unc-navy" />
           </motion.button>
           <motion.button
             className="p-2 hover:bg-white/10 rounded-lg transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FileText size={16} className="text-blue-light" />
+            <FileText size={16} className="text-unc-navy" />
           </motion.button>
         </div>
 

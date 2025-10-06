@@ -52,8 +52,8 @@ export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
       isMaximized: false,
       x: 50,
       y: 50,
-      width: 500,
-      height: 400,
+      width: 480,
+      height: 380,
       zIndex: 1001
     },
     {
@@ -63,14 +63,40 @@ export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
       isOpen: true,
       isMinimized: false,
       isMaximized: false,
-      x: 580,
-      y: 80,
-      width: 600,
-      height: 500,
+      x: 550,
+      y: 50,
+      width: 480,
+      height: 380,
       zIndex: 1002
+    },
+    {
+      id: 'education',
+      title: 'Education',
+      component: 'education',
+      isOpen: true,
+      isMinimized: false,
+      isMaximized: false,
+      x: 50,
+      y: 450,
+      width: 480,
+      height: 380,
+      zIndex: 1003
+    },
+    {
+      id: 'work',
+      title: 'Work Experience',
+      component: 'work',
+      isOpen: true,
+      isMinimized: false,
+      isMaximized: false,
+      x: 550,
+      y: 450,
+      width: 480,
+      height: 380,
+      zIndex: 1004
     }
   ]);
-  const [maxZIndex, setMaxZIndex] = useState(1002);
+  const [maxZIndex, setMaxZIndex] = useState(1004);
 
   const getNextZIndex = () => {
     setMaxZIndex(prev => prev + 1);
