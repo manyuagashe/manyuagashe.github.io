@@ -5,7 +5,7 @@ const WorkWindow = () => {
     {
       company: "Office of Off Campus Student Life @UNC",
       position: "Product Manager - New Software Projects",
-      duration: "Sep '25 - May '26",
+      duration: "2025 - 2026",
       items: [
         "Creating and iterating on proposed software solution for party registration process at university for client office at UNC to support >15000 students residing off campus",
         "Detailed design and feature research for product, along with constant review of technical design and sketching out user experience , along with recruiting frontend and backend developers from talented student pool for project",
@@ -15,7 +15,7 @@ const WorkWindow = () => {
     {
       company: "UNC School of Data Science",
       position: "Teaching Assistant",
-      duration: "August '25 - May '26",
+      duration: "2025 - 2026",
       items: [
         "planned out intuitive sessions to review essential python and data science concepts",
         "1 on 1 corrections, review, debugging sessions offered to support student success",

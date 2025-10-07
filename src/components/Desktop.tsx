@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Taskbar from "./Taskbar";
 import WindowManager from "./WindowManager";
+import ContactButton from "./ContactButton";
 import { WindowProvider } from "./WindowContext";
 
 interface Star {
@@ -117,6 +118,7 @@ const Desktop = () => {
         {/* OS Interface */}
         <div className="relative z-10 h-full flex flex-col">
           <WindowManager />
+          <ContactButton />
           <Taskbar />
         </div>
       </div>

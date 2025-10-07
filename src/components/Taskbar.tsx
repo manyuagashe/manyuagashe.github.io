@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import { useWindows } from "./WindowContext";
+import { useState, useEffect } from "react";
 import { 
   User, 
   GraduationCap, 
   Code, 
   Briefcase, 
   Mail, 
-  Terminal,
-  FileText,
-  Folder
+  Terminal
 } from "lucide-react";
 
 const Taskbar = () => {
   const { windows, openWindow, restoreWindow } = useWindows();
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   const apps = [
     { id: 'about', title: 'About Me', component: 'about', icon: User, color: 'text-unc-navy' },
@@ -22,6 +22,14 @@ const Taskbar = () => {
     { id: 'contact', title: 'Contact', component: 'contact', icon: Mail, color: 'text-unc-navy' },
     { id: 'terminal', title: 'Terminal', component: 'terminal', icon: Terminal, color: 'text-unc-navy' },
   ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const handleAppClick = (app: typeof apps[0]) => {
     const existingWindow = windows.find(w => w.id === app.id);
@@ -92,27 +100,9 @@ const Taskbar = () => {
           })}
         </div>
 
-        {/* System Icons */}
-        <div className="ml-8 flex items-center space-x-2">
-          <motion.button
-            className="p-2 hover:bg-white/10 rounded-lg transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Folder size={16} className="text-unc-navy" />
-          </motion.button>
-          <motion.button
-            className="p-2 hover:bg-white/10 rounded-lg transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FileText size={16} className="text-unc-navy" />
-          </motion.button>
-        </div>
-
         {/* Time */}
         <div className="ml-auto text-sm text-white/80 font-mono">
-          {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+          {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
         </div>
       </div>
     </motion.div>

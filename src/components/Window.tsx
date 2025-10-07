@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useWindows } from "./WindowContext";
-import { X, Minus, Square, Maximize2 } from "lucide-react";
 
 interface WindowProps {
   id: string;
@@ -77,42 +76,32 @@ const Window = ({ id, title, children, isMaximized }: WindowProps) => {
         onMouseDown={handleMouseDown}
       >
         <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-        </div>
-        
-        <h3 className="text-sm font-medium text-blue-navy truncate mx-4">{title}</h3>
-        
-        <div className="flex items-center space-x-1">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              minimizeWindow(id);
-            }}
-            className="p-1 hover:bg-white/10 rounded transition-colors"
-          >
-            <Minus size={12} className="text-white" />
-          </button>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              maximizeWindow(id);
-            }}
-            className="p-1 hover:bg-white/10 rounded transition-colors"
-          >
-            {isMaximized ? <Maximize2 size={12} className="text-white" /> : <Square size={12} className="text-white" />}
-          </button>
           <button
             onClick={(e) => {
               e.stopPropagation();
               closeWindow(id);
             }}
-            className="p-1 hover:bg-red-500/20 rounded transition-colors"
-          >
-            <X size={12} className="text-white" />
-          </button>
+            className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-600 transition-colors"
+          />
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              minimizeWindow(id);
+            }}
+            className="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-600 transition-colors"
+          />
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              maximizeWindow(id);
+            }}
+            className="w-3 h-3 bg-green-500 rounded-full hover:bg-green-600 transition-colors"
+          />
         </div>
+        
+        <h3 className="text-sm font-medium text-blue-navy truncate mx-4">{title}</h3>
+        
+        <div className="w-12"></div>
       </div>
 
       {/* Window Content */}
