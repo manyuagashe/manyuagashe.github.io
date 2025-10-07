@@ -46,12 +46,12 @@ const ContactButton = () => {
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}
-      whileHover={{ scale: 1.15 }}
+      whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
       style={{ left: position.left, top: position.top }}
-      className="fixed transform -translate-x-1/2 -translate-y-1/2 z-[999] w-10 h-10 rounded-full bg-carolina-blue/90 backdrop-blur-glass border-2 border-white/40 shadow-lg flex items-center justify-center hover:bg-carolina-blue hover:shadow-xl transition-all duration-300"
+      className="fixed transform -translate-x-1/2 -translate-y-1/2 z-[999] p-0 bg-transparent border-none cursor-pointer"
     >
-      <Mail size={16} className="text-white" />
+      <Mail size={24} className="text-white drop-shadow-lg" />
     </motion.button>
   );
 };
