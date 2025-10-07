@@ -15,7 +15,7 @@ const HeroWindow = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl font-bold text-white mb-2"
         >
-          manyu
+          abhi"manyu" agashe
         </motion.h1>
         
         <motion.p 
@@ -24,7 +24,7 @@ const HeroWindow = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-blue-100 mb-1"
         >
-          computer science & statistics
+          student, dev, (hopeful) future builder
         </motion.p>
         
         <motion.p 
@@ -33,7 +33,7 @@ const HeroWindow = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-base md:text-lg text-blue-200"
         >
-          university of north carolina at chapel hill
+          university of north carolina at chapel hill, prev @UBS
         </motion.p>
 
         <motion.div
@@ -43,7 +43,7 @@ const HeroWindow = () => {
           className="mt-8 p-4 bg-gradient-to-r from-carolina-blue/20 to-blue-medium/20 rounded-lg border border-carolina-blue/30"
         >
           <p className="text-white/90 text-sm">
-            Welcome to my digital workspace - explore the windows to learn more about me!
+            this website is an online repository of the things that matter about me.
           </p>
         </motion.div>
       </motion.div>
