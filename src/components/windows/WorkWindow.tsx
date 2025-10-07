@@ -17,12 +17,11 @@ const WorkWindow = () => {
       position: "Teaching Assistant",
       duration: "August '25 - May '26",
       items: [
-        "planned out intuitive sessions to review essential python and data science concepts"
-        "1 on 1 corrections, review, debugging sessions offered to support student success"
+        "planned out intuitive sessions to review essential python and data science concepts",
+        "1 on 1 corrections, review, debugging sessions offered to support student success",
         "helped create and grade a foundationally solid and technical data science curriculum"
       ]
     },
-    
     {
       company: "Research Lab",
       position: "Undergraduate Researcher",
