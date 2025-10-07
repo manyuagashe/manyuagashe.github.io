@@ -3,25 +3,26 @@ import { motion } from "framer-motion";
 const WorkWindow = () => {
   const workExperiences = [
     {
-      company: "UNC Chapel Hill",
-      position: "Teaching Assistant",
-      duration: "Fall 2024",
+      company: "Office of Off Campus Student Life @UNC",
+      position: "Product Manager - New Software Projects",
+      duration: "Sep '25 - May '26",
       items: [
-        "assisted students in understanding programming concepts and debugging code",
-        "graded assignments and provided detailed feedback to help students improve",
-        "held office hours to support student learning and answer questions"
+        "Creating and iterating on proposed software solution for party registration process at university for client office at UNC to support >15000 students residing off campus",
+        "Detailed design and feature research for product, along with constant review of technical design and sketching out user experience , along with recruiting frontend and backend developers from talented student pool for project",
+        "Developing and assisting developer experience in Next.JS, FastAPI, Postgres, SQLAlchemy."
       ]
     },
     {
-      company: "Tech Startup",
-      position: "Software Engineering Intern",
-      duration: "Summer 2024",
+      company: "UNC School of Data Science",
+      position: "Teaching Assistant",
+      duration: "August '25 - May '26",
       items: [
-        "developed and maintained web applications using React and Node.js",
-        "collaborated with cross-functional teams to deliver high-quality software",
-        "participated in code reviews and contributed to technical documentation"
+        "planned out intuitive sessions to review essential python and data science concepts"
+        "1 on 1 corrections, review, debugging sessions offered to support student success"
+        "helped create and grade a foundationally solid and technical data science curriculum"
       ]
     },
+    
     {
       company: "Research Lab",
       position: "Undergraduate Researcher",
