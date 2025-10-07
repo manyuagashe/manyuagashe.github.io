@@ -42,9 +42,9 @@ interface WindowProviderProps {
 }
 
 export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
-  // Calculate grid layout for 2x2 windows with center gap for contact button
+  // Calculate grid layout for 2x2 windows
   const gridMargin = 40;
-  const gridGap = 48; // Increased for center button space
+  const gridGap = 24;
   const taskbarHeight = 60;
   const windowWidth = (window.innerWidth - gridMargin * 2 - gridGap) / 2;
   const windowHeight = (window.innerHeight - gridMargin * 2 - taskbarHeight - gridGap) / 2;

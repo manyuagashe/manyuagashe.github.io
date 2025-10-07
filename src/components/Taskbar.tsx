@@ -101,7 +101,7 @@ const Taskbar = () => {
         </div>
 
         {/* Time */}
-        <div className="ml-auto text-sm text-white/80 font-mono">
+        <div className="ml-auto text-sm text-unc-navy font-mono">
           {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
         </div>
       </div>

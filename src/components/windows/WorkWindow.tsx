@@ -5,7 +5,7 @@ const WorkWindow = () => {
     {
       company: "Office of Off Campus Student Life @UNC",
       position: "Product Manager - New Software Projects",
-      duration: "2025 - 2026",
+      duration: "Sep '25 - May '26",
       items: [
         "Creating and iterating on proposed software solution for party registration process at university for client office at UNC to support >15000 students residing off campus",
         "Detailed design and feature research for product, along with constant review of technical design and sketching out user experience , along with recruiting frontend and backend developers from talented student pool for project",
@@ -15,7 +15,7 @@ const WorkWindow = () => {
     {
       company: "UNC School of Data Science",
       position: "Teaching Assistant",
-      duration: "2025 - 2026",
+      duration: "August '25 - May '26",
       items: [
         "planned out intuitive sessions to review essential python and data science concepts",
         "1 on 1 corrections, review, debugging sessions offered to support student success",
@@ -69,7 +69,7 @@ const WorkWindow = () => {
                     {experience.company}
                   </p>
                 </div>
-                <span className="text-sm text-white bg-white/20 px-2 py-1 rounded whitespace-nowrap">
+                <span className="text-sm text-blue-navy bg-white/40 px-2 py-1 rounded whitespace-nowrap font-medium">
                   {experience.duration}
                 </span>
               </div>
