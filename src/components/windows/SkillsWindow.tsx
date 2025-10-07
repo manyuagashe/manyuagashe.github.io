@@ -4,11 +4,11 @@ const SkillsWindow = () => {
   const skillGroups = [
     {
       category: "Programming Languages",
-      items: ["Python", "JavaScript", "TypeScript", "Java", "R", "SQL", "C++"]
+      items: ["Python", "TypeScript", "Java", "R", "SQL"]
     },
     {
       category: "Web Development",
-      items: ["React", "Node.js", "HTML/CSS", "Tailwind CSS", "Next.js", "Express.js"]
+      items: ["React", "Node.js", "HTML/CSS", "Tailwind CSS", "Next.js"]
     },
     {
       category: "Data Science & ML",
@@ -16,7 +16,7 @@ const SkillsWindow = () => {
     },
     {
       category: "Tools & Technologies",
-      items: ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "Linux"]
+      items: ["Git", "Docker", "MongoDB", "PostgreSQL", "Linux"]
     }
   ];
 
