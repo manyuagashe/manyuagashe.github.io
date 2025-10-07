@@ -47,7 +47,7 @@ export const WindowProvider: React.FC<WindowProviderProps> = ({ children }) => {
   const gridGap = 24;
   const taskbarHeight = 60;
   const windowWidth = (window.innerWidth - gridMargin * 2 - gridGap) / 2;
-  const windowHeight = (window.innerHeight - gridMargin - taskbarHeight - gridGap) / 2;
+  const windowHeight = (window.innerHeight - gridMargin * 2 - taskbarHeight - gridGap) / 2;
 
   const [windows, setWindows] = useState<WindowState[]>([
     {
