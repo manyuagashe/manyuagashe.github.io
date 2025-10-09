@@ -4,6 +4,7 @@ import { AppSidebar } from "@/components/ide/AppSidebar";
 import { Editor } from "@/components/ide/Editor";
 import { Console } from "@/components/ide/Console";
 import { Menu } from "lucide-react";
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "@/components/ui/resizable";
 
 const Index = () => {
   const [activeFile, setActiveFile] = useState('about');
@@ -32,23 +33,32 @@ const Index = () => {
         </div>
 
         {/* Main Content Area */}
-        <div className="flex flex-1 overflow-hidden">
+        <ResizablePanelGroup direction="horizontal" className="flex-1">
           {sidebarOpen && (
-            <AppSidebar activeFile={activeFile} onFileSelect={setActiveFile} />
+            <>
+              <ResizablePanel defaultSize={20} minSize={15} maxSize={30}>
+                <AppSidebar activeFile={activeFile} onFileSelect={setActiveFile} />
+              </ResizablePanel>
+              <ResizableHandle withHandle />
+            </>
           )}
           
-          <div className="flex-1 flex flex-col">
-            {/* Editor */}
-            <div className="flex-1 overflow-hidden">
-              <Editor activeFile={activeFile} />
-            </div>
-
-            {/* Console */}
-            <div className="h-32 border-t border-border">
-              <Console />
-            </div>
-          </div>
-        </div>
+          <ResizablePanel defaultSize={80}>
+            <ResizablePanelGroup direction="vertical">
+              {/* Editor */}
+              <ResizablePanel defaultSize={70} minSize={30}>
+                <Editor activeFile={activeFile} />
+              </ResizablePanel>
+              
+              <ResizableHandle withHandle />
+              
+              {/* Console */}
+              <ResizablePanel defaultSize={30} minSize={15} maxSize={50}>
+                <Console />
+              </ResizablePanel>
+            </ResizablePanelGroup>
+          </ResizablePanel>
+        </ResizablePanelGroup>
 
         {/* Status Bar */}
         <div className="h-6 bg-primary border-t border-border flex items-center justify-between px-3 text-xs font-mono text-primary-foreground">

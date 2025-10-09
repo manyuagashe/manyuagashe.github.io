@@ -4,6 +4,120 @@ interface EditorProps {
   activeFile: string;
 }
 
+// Syntax highlighter
+const highlightSyntax = (line: string, language: string): JSX.Element => {
+  if (language === 'markdown') {
+    // Markdown highlighting
+    if (line.startsWith('# ')) {
+      return <span className="text-[hsl(210,100%,70%)] font-bold">{line}</span>;
+    }
+    if (line.startsWith('## ')) {
+      return <span className="text-[hsl(210,100%,65%)] font-bold">{line}</span>;
+    }
+    if (line.startsWith('- ') || line.startsWith('* ')) {
+      return <span><span className="text-[hsl(40,100%,60%)]">{line.substring(0, 2)}</span><span className="text-foreground">{line.substring(2)}</span></span>;
+    }
+    if (line.includes('**')) {
+      const parts = line.split('**');
+      return <span>{parts.map((part, i) => i % 2 === 1 ? <span key={i} className="text-[hsl(280,100%,70%)] font-bold">{part}</span> : <span key={i} className="text-foreground">{part}</span>)}</span>;
+    }
+    if (line.startsWith('*') && line.endsWith('*')) {
+      return <span className="text-muted-foreground italic">{line}</span>;
+    }
+    if (line.startsWith('---')) {
+      return <span className="text-border">{line}</span>;
+    }
+  }
+  
+  if (language === 'typescript') {
+    // TypeScript highlighting
+    const keywords = ['interface', 'const', 'export', 'default', 'string', 'number', 'boolean', 'void', 'any', 'type', 'enum'];
+    let highlighted = line;
+    
+    // Comments
+    if (line.trim().startsWith('//')) {
+      return <span className="text-muted-foreground italic">{line}</span>;
+    }
+    
+    // Multi-line comment
+    if (line.trim().startsWith('/*') || line.trim().startsWith('*')) {
+      return <span className="text-muted-foreground italic">{line}</span>;
+    }
+    
+    // Strings
+    const stringMatch = line.match(/"[^"]*"|'[^']*'|`[^`]*`/g);
+    if (stringMatch) {
+      const parts: JSX.Element[] = [];
+      let lastIndex = 0;
+      stringMatch.forEach((str) => {
+        const index = line.indexOf(str, lastIndex);
+        if (index > lastIndex) {
+          parts.push(<span key={`text-${lastIndex}`}>{highlightKeywords(line.substring(lastIndex, index), keywords)}</span>);
+        }
+        parts.push(<span key={`str-${index}`} className="text-[hsl(120,100%,65%)]">{str}</span>);
+        lastIndex = index + str.length;
+      });
+      if (lastIndex < line.length) {
+        parts.push(<span key={`text-${lastIndex}`}>{highlightKeywords(line.substring(lastIndex), keywords)}</span>);
+      }
+      return <span>{parts}</span>;
+    }
+    
+    return <span>{highlightKeywords(line, keywords)}</span>;
+  }
+  
+  if (language === 'json') {
+    // JSON highlighting
+    if (line.includes(':')) {
+      const parts = line.split(':');
+      return <span>
+        <span className="text-[hsl(200,100%,70%)]">{parts[0]}</span>
+        <span className="text-foreground">:</span>
+        <span className="text-[hsl(120,100%,65%)]">{parts.slice(1).join(':')}</span>
+      </span>;
+    }
+  }
+  
+  return <span className="text-foreground">{line}</span>;
+};
+
+const highlightKeywords = (text: string, keywords: string[]): JSX.Element => {
+  const parts: (string | JSX.Element)[] = [text];
+  
+  keywords.forEach((keyword) => {
+    const newParts: (string | JSX.Element)[] = [];
+    parts.forEach((part) => {
+      if (typeof part === 'string') {
+        const regex = new RegExp(`\\b${keyword}\\b`, 'g');
+        const matches = [...part.matchAll(regex)];
+        if (matches.length > 0) {
+          let lastIndex = 0;
+          matches.forEach((match, i) => {
+            if (match.index !== undefined) {
+              if (match.index > lastIndex) {
+                newParts.push(part.substring(lastIndex, match.index));
+              }
+              newParts.push(<span key={`kw-${keyword}-${i}`} className="text-[hsl(280,100%,70%)]">{match[0]}</span>);
+              lastIndex = match.index + match[0].length;
+            }
+          });
+          if (lastIndex < part.length) {
+            newParts.push(part.substring(lastIndex));
+          }
+        } else {
+          newParts.push(part);
+        }
+      } else {
+        newParts.push(part);
+      }
+    });
+    parts.length = 0;
+    parts.push(...newParts);
+  });
+  
+  return <span>{parts}</span>;
+};
+
 const fileContents: Record<string, { title: string; content: string; language: string }> = {
   about: {
     title: 'README.md',
@@ -228,7 +342,7 @@ export function Editor({ activeFile }: EditorProps) {
             <pre className="font-mono text-xs leading-6">
               {lines.map((line, index) => (
                 <div key={index} className="whitespace-pre-wrap">
-                  <code className="text-foreground">{line || ' '}</code>
+                  <code>{highlightSyntax(line || ' ', file.language)}</code>
                 </div>
               ))}
             </pre>
