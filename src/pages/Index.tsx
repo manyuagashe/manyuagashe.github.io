@@ -5,6 +5,7 @@ import { Editor } from "@/components/ide/Editor";
 import { Console } from "@/components/ide/Console";
 import { Menu } from "lucide-react";
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "@/components/ui/resizable";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Index = () => {
   const [activeFile, setActiveFile] = useState('about');
@@ -27,8 +28,11 @@ const Index = () => {
             <span className="text-muted-foreground">View</span>
             <span className="text-muted-foreground">Help</span>
           </div>
-          <div className="ml-auto text-xs text-muted-foreground">
-            portfolio-v1.0.0
+          <div className="ml-auto flex items-center gap-3">
+            <ThemeToggle />
+            <div className="text-xs text-muted-foreground">
+              portfolio-v1.0.0
+            </div>
           </div>
         </div>
 
