@@ -101,7 +101,7 @@ export function AppSidebar({ activeFile, onFileSelect }: AppSidebarProps) {
   };
 
   return (
-    <Sidebar className="border-r border-border bg-sidebar-background">
+    <Sidebar className="border-r border-border bg-sidebar-background !top-9 !h-[calc(100vh-2.25rem)]">
       <SidebarContent className="p-0">
         <SidebarGroup>
           <SidebarGroupLabel className="px-3 py-2 text-[10px] uppercase tracking-wider text-muted-foreground font-mono border-b border-border">
