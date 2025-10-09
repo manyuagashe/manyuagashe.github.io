@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
 import { useWindows } from "./WindowContext";
 import { useEffect, useState } from "react";
 
@@ -49,9 +48,9 @@ const ContactButton = () => {
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
       style={{ left: position.left, top: position.top }}
-      className="fixed transform -translate-x-1/2 -translate-y-1/2 z-[999] p-0 bg-transparent border-none cursor-pointer"
+      className="fixed transform -translate-x-1/2 -translate-y-1/2 z-[999] p-0 bg-transparent border-none cursor-pointer font-mono text-2xl text-carolina-blue"
     >
-      <Mail size={24} className="text-white drop-shadow-lg" />
+      [@]
     </motion.button>
   );
 };

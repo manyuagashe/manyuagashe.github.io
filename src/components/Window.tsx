@@ -65,43 +65,49 @@ const Window = ({ id, title, children, isMaximized }: WindowProps) => {
     <motion.div
       ref={windowRef}
       onClick={handleClick}
-      className="bg-glass-bg backdrop-blur-glass border border-glass-border rounded-lg shadow-glass overflow-hidden select-none h-full flex flex-col"
+      className="bg-black border border-gray-700 overflow-hidden select-none h-full flex flex-col"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.2 }}
     >
       {/* Window Header */}
       <div
-        className="bg-gradient-to-r from-carolina-blue/20 to-blue-medium/20 border-b border-glass-border px-4 py-2 flex items-center justify-between cursor-move"
+        className="bg-black border-b border-gray-700 px-4 py-2 flex items-center justify-between cursor-move font-mono text-xs"
         onMouseDown={handleMouseDown}
       >
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
           <button
             onClick={(e) => {
               e.stopPropagation();
               closeWindow(id);
             }}
-            className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-600 transition-colors"
-          />
+            className="text-red-500 hover:text-red-400 transition-colors"
+          >
+            [X]
+          </button>
           <button
             onClick={(e) => {
               e.stopPropagation();
               minimizeWindow(id);
             }}
-            className="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-600 transition-colors"
-          />
+            className="text-yellow-500 hover:text-yellow-400 transition-colors"
+          >
+            [_]
+          </button>
           <button
             onClick={(e) => {
               e.stopPropagation();
               maximizeWindow(id);
             }}
-            className="w-3 h-3 bg-green-500 rounded-full hover:bg-green-600 transition-colors"
-          />
+            className="text-green-500 hover:text-green-400 transition-colors"
+          >
+            [□]
+          </button>
         </div>
         
         <h3 className="text-sm font-medium text-blue-navy truncate mx-4">{title}</h3>
         
-        <div className="w-12"></div>
+        <div className="w-20"></div>
       </div>
 
       {/* Window Content */}

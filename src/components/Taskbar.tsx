@@ -1,26 +1,18 @@
 import { motion } from "framer-motion";
 import { useWindows } from "./WindowContext";
 import { useState, useEffect } from "react";
-import { 
-  User, 
-  GraduationCap, 
-  Code, 
-  Briefcase, 
-  Mail, 
-  Terminal
-} from "lucide-react";
 
 const Taskbar = () => {
   const { windows, openWindow, restoreWindow } = useWindows();
   const [currentTime, setCurrentTime] = useState(new Date());
 
   const apps = [
-    { id: 'about', title: 'About Me', component: 'about', icon: User, color: 'text-unc-navy' },
-    { id: 'education', title: 'Education', component: 'education', icon: GraduationCap, color: 'text-unc-navy' },
-    { id: 'skills', title: 'Skills', component: 'skills', icon: Code, color: 'text-unc-navy' },
-    { id: 'work', title: 'Work Experience', component: 'work', icon: Briefcase, color: 'text-unc-navy' },
-    { id: 'contact', title: 'Contact', component: 'contact', icon: Mail, color: 'text-unc-navy' },
-    { id: 'terminal', title: 'Terminal', component: 'terminal', icon: Terminal, color: 'text-unc-navy' },
+    { id: 'about', title: 'About Me', component: 'about', ascii: '[@]', color: 'text-unc-navy' },
+    { id: 'education', title: 'Education', component: 'education', ascii: '[^]', color: 'text-unc-navy' },
+    { id: 'skills', title: 'Skills', component: 'skills', ascii: '</>',  color: 'text-unc-navy' },
+    { id: 'work', title: 'Work Experience', component: 'work', ascii: '[#]', color: 'text-unc-navy' },
+    { id: 'contact', title: 'Contact', component: 'contact', ascii: '[@]', color: 'text-unc-navy' },
+    { id: 'terminal', title: 'Terminal', component: 'terminal', ascii: '>_', color: 'text-unc-navy' },
   ];
 
   useEffect(() => {
@@ -49,7 +41,7 @@ const Taskbar = () => {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="fixed bottom-0 left-0 right-0 h-16 bg-glass-bg backdrop-blur-glass border-t border-glass-border shadow-glass z-50"
+      className="fixed bottom-0 left-0 right-0 h-16 bg-black border-t border-gray-800 z-50"
     >
       <div className="flex items-center justify-center h-full px-4">
         {/* App Icons */}
@@ -63,10 +55,10 @@ const Taskbar = () => {
                 key={app.id}
                 onClick={() => handleAppClick(app)}
                 className={`
-                  relative p-3 rounded-lg transition-all duration-300 group
+                  relative px-3 py-2 transition-all duration-300 group font-mono text-sm
                   ${isOpen 
-                    ? 'bg-carolina-blue/20 border border-carolina-blue/30' 
-                    : 'hover:bg-white/10 border border-transparent'
+                    ? 'bg-gray-800 border border-gray-600' 
+                    : 'hover:bg-gray-900 border border-transparent'
                   }
                   ${isMinimized ? 'opacity-60' : ''}
                 `}
@@ -76,15 +68,14 @@ const Taskbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
-                <app.icon 
-                  size={20} 
-                  className={`${app.color} transition-colors duration-300 group-hover:scale-110`} 
-                />
+                <span className={`${app.color}`}>
+                  {app.ascii}
+                </span>
                 
                 {/* Active indicator */}
                 {isOpen && !isMinimized && (
                   <motion.div
-                    className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-carolina-blue rounded-full"
+                    className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-carolina-blue"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.2 }}
@@ -92,7 +83,7 @@ const Taskbar = () => {
                 )}
                 
                 {/* Tooltip */}
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-gray-700 text-white text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
                   {app.title}
                 </div>
               </motion.button>
