@@ -21,13 +21,13 @@ const Index = () => {
           >
             <Menu className="h-4 w-4" />
           </button>
-          <div className="flex items-center gap-4 text-xs font-mono">
+          <div className="flex items-center gap-4 text-xs">
             <span className="text-foreground">File</span>
             <span className="text-muted-foreground">Edit</span>
             <span className="text-muted-foreground">View</span>
             <span className="text-muted-foreground">Help</span>
           </div>
-          <div className="ml-auto text-xs font-mono text-muted-foreground">
+          <div className="ml-auto text-xs text-muted-foreground">
             portfolio-v1.0.0
           </div>
         </div>
@@ -61,7 +61,7 @@ const Index = () => {
         </ResizablePanelGroup>
 
         {/* Status Bar */}
-        <div className="h-6 bg-primary border-t border-border flex items-center justify-between px-3 text-xs font-mono text-primary-foreground">
+        <div className="h-6 bg-primary border-t border-border flex items-center justify-between px-3 text-xs text-primary-foreground">
           <div className="flex items-center gap-4">
             <span>Ln 1, Col 1</span>
             <span>UTF-8</span>

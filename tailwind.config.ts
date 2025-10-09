@@ -70,7 +70,8 @@ export default {
         glass: "var(--glass-shadow)",
       },
       fontFamily: {
-        sans: ["-apple-system", "BlinkMacSystemFont", "SF Pro Text", "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+        sans: ["Geist", "-apple-system", "BlinkMacSystemFont", "SF Pro Text", "SF Pro Display", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+        mono: ["Consolas", "Monaco", "Courier New", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",
