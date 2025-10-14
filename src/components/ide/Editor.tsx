@@ -371,9 +371,94 @@ export default contact;`
   }
 };
 
+const pedagogyData = [
+  {
+    title: "Teaching Philosophy",
+    description: "My approach to education and learning",
+    driveLink: "https://drive.google.com/file/d/1example1/view",
+  },
+  {
+    title: "Course Materials",
+    description: "Sample teaching materials and curriculum",
+    driveLink: "https://drive.google.com/file/d/1example2/view",
+  },
+  {
+    title: "Educational Research",
+    description: "Research on effective teaching methodologies",
+    driveLink: "https://drive.google.com/file/d/1example3/view",
+  },
+  {
+    title: "Student Feedback Analysis",
+    description: "Analysis of teaching effectiveness",
+    driveLink: "https://drive.google.com/file/d/1example4/view",
+  }
+];
+
+const convertDriveLinkToEmbed = (link: string): string => {
+  // Extract file ID from various Google Drive URL formats
+  const match = link.match(/\/d\/([^\/]+)/);
+  if (match && match[1]) {
+    return `https://drive.google.com/file/d/${match[1]}/preview`;
+  }
+  return link;
+};
+
 export function Editor({ activeFile }: EditorProps) {
   const file = fileContents[activeFile] || fileContents.about;
   const lines = file.content.split('\n');
+
+  // Special rendering for pedagogy file
+  if (activeFile === 'pedagogy') {
+    return (
+      <div className="h-full flex flex-col bg-background">
+        {/* Tab Bar */}
+        <div className="flex items-center h-9 bg-card border-b border-border px-2">
+          <div className="flex items-center gap-2 px-3 py-1 bg-background border-r border-border text-xs font-mono text-primary">
+            {file.title}
+            <span className="text-muted-foreground ml-2">interactive view</span>
+          </div>
+        </div>
+
+        {/* Interactive Content */}
+        <motion.div
+          key={activeFile}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+          className="flex-1 overflow-auto p-6 space-y-6"
+        >
+          {pedagogyData.map((resource, index) => (
+            <div key={index} className="border border-border rounded-lg overflow-hidden bg-card">
+              <div className="p-4 border-b border-border">
+                <h3 className="font-mono text-sm text-primary font-bold mb-1">
+                  {resource.title}
+                </h3>
+                <p className="font-mono text-xs text-muted-foreground mb-2">
+                  {resource.description}
+                </p>
+                <a
+                  href={resource.driveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-xs text-accent hover:underline"
+                >
+                  {resource.driveLink}
+                </a>
+              </div>
+              <div className="w-full h-[600px] bg-background">
+                <iframe
+                  src={convertDriveLinkToEmbed(resource.driveLink)}
+                  className="w-full h-full"
+                  title={resource.title}
+                  allow="autoplay"
+                />
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div className="h-full flex flex-col bg-background">
