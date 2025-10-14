@@ -28,6 +28,8 @@ const fileStructure: FileItem[] = [
       { name: 'education.ts', type: 'file', id: 'education' },
       { name: 'skills.json', type: 'file', id: 'skills' },
       { name: 'experience.ts', type: 'file', id: 'work' },
+      { name: 'pedagogy.ts', type: 'file', id: 'pedagogy' },
+      { name: 'research.ts', type: 'file', id: 'research' },
       { name: 'contact.ts', type: 'file', id: 'contact' },
     ]
   }

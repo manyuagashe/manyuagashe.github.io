@@ -273,6 +273,75 @@ const experiences: WorkExperience[] = [
 
 export default experiences;`
   },
+  pedagogy: {
+    title: 'pedagogy.ts',
+    language: 'typescript',
+    content: `interface PedagogyResource {
+  title: string;
+  description: string;
+  driveLink: string;
+  type: string;
+}
+
+const pedagogyResources: PedagogyResource[] = [
+  {
+    title: "Teaching Philosophy",
+    description: "My approach to education and learning",
+    driveLink: "https://drive.google.com/file/d/1example1/view",
+    type: "PDF"
+  },
+  {
+    title: "Course Materials",
+    description: "Sample teaching materials and curriculum",
+    driveLink: "https://drive.google.com/file/d/1example2/view",
+    type: "PDF"
+  },
+  {
+    title: "Educational Research",
+    description: "Research on effective teaching methodologies",
+    driveLink: "https://drive.google.com/file/d/1example3/view",
+    type: "PDF"
+  },
+  {
+    title: "Student Feedback Analysis",
+    description: "Analysis of teaching effectiveness",
+    driveLink: "https://drive.google.com/file/d/1example4/view",
+    type: "PDF"
+  }
+];
+
+/**
+ * These resources showcase my work in pedagogy and education.
+ * Links will be updated with actual documents.
+ */
+
+export default pedagogyResources;`
+  },
+  research: {
+    title: 'research.ts',
+    language: 'typescript',
+    content: `// Research Focus
+
+/**
+ * AI Ethics
+ * 
+ * Exploring the ethical implications of artificial intelligence,
+ * including fairness, transparency, accountability, and the
+ * societal impact of AI systems.
+ */
+
+const researchAreas = {
+  primary: "AI Ethics",
+  topics: [
+    "Algorithmic Fairness",
+    "AI Transparency and Explainability",
+    "Privacy in AI Systems",
+    "Responsible AI Development"
+  ]
+};
+
+export default researchAreas;`
+  },
   contact: {
     title: 'contact.ts',
     language: 'typescript',
