@@ -4,47 +4,52 @@ interface EditorProps {
   activeFile: string;
 }
 
-// Syntax highlighter
+// Syntax highlighter with Monokai-inspired colors
 const highlightSyntax = (line: string, language: string): JSX.Element => {
   if (language === 'markdown') {
-    // Markdown highlighting
+    // Markdown highlighting with varied sizes
     if (line.startsWith('# ')) {
-      return <span className="text-[hsl(210,100%,70%)] font-bold">{line}</span>;
+      return <span className="text-[hsl(197,71%,73%)] font-bold text-xl">{line}</span>;
     }
     if (line.startsWith('## ')) {
-      return <span className="text-[hsl(210,100%,65%)] font-bold">{line}</span>;
+      return <span className="text-[hsl(197,71%,73%)] font-bold text-lg">{line}</span>;
     }
     if (line.startsWith('- ') || line.startsWith('* ')) {
-      return <span><span className="text-[hsl(40,100%,60%)]">{line.substring(0, 2)}</span><span className="text-foreground">{line.substring(2)}</span></span>;
+      return <span className="text-base"><span className="text-[hsl(31,100%,71%)]">{line.substring(0, 2)}</span><span className="text-foreground">{line.substring(2)}</span></span>;
     }
     if (line.includes('**')) {
       const parts = line.split('**');
-      return <span>{parts.map((part, i) => i % 2 === 1 ? <span key={i} className="text-[hsl(280,100%,70%)] font-bold">{part}</span> : <span key={i} className="text-foreground">{part}</span>)}</span>;
+      return <span className="text-base">{parts.map((part, i) => i % 2 === 1 ? <span key={i} className="text-[hsl(326,100%,74%)] font-bold">{part}</span> : <span key={i} className="text-foreground">{part}</span>)}</span>;
     }
     if (line.startsWith('*') && line.endsWith('*')) {
-      return <span className="text-muted-foreground italic">{line}</span>;
+      return <span className="text-muted-foreground italic text-sm">{line}</span>;
     }
     if (line.startsWith('---')) {
-      return <span className="text-border">{line}</span>;
+      return <span className="text-border text-sm">{line}</span>;
     }
   }
   
   if (language === 'typescript') {
-    // TypeScript highlighting
+    // TypeScript highlighting with Monokai colors
     const keywords = ['interface', 'const', 'export', 'default', 'string', 'number', 'boolean', 'void', 'any', 'type', 'enum'];
     let highlighted = line;
     
-    // Comments
+    // Interface/type declarations - larger
+    if (line.trim().startsWith('interface ') || line.trim().startsWith('type ')) {
+      return <span className="text-[hsl(186,100%,69%)] font-bold text-base">{line}</span>;
+    }
+    
+    // Comments - smaller, muted
     if (line.trim().startsWith('//')) {
-      return <span className="text-muted-foreground italic">{line}</span>;
+      return <span className="text-muted-foreground italic text-xs">{line}</span>;
     }
     
     // Multi-line comment
     if (line.trim().startsWith('/*') || line.trim().startsWith('*')) {
-      return <span className="text-muted-foreground italic">{line}</span>;
+      return <span className="text-muted-foreground italic text-xs">{line}</span>;
     }
     
-    // Strings
+    // Strings - warmer green
     const stringMatch = line.match(/"[^"]*"|'[^']*'|`[^`]*`/g);
     if (stringMatch) {
       const parts: JSX.Element[] = [];
@@ -52,33 +57,33 @@ const highlightSyntax = (line: string, language: string): JSX.Element => {
       stringMatch.forEach((str) => {
         const index = line.indexOf(str, lastIndex);
         if (index > lastIndex) {
-          parts.push(<span key={`text-${lastIndex}`}>{highlightKeywords(line.substring(lastIndex, index), keywords)}</span>);
+          parts.push(<span key={`text-${lastIndex}`} className="text-sm">{highlightKeywords(line.substring(lastIndex, index), keywords)}</span>);
         }
-        parts.push(<span key={`str-${index}`} className="text-[hsl(120,100%,65%)]">{str}</span>);
+        parts.push(<span key={`str-${index}`} className="text-[hsl(80,76%,53%)] text-sm">{str}</span>);
         lastIndex = index + str.length;
       });
       if (lastIndex < line.length) {
-        parts.push(<span key={`text-${lastIndex}`}>{highlightKeywords(line.substring(lastIndex), keywords)}</span>);
+        parts.push(<span key={`text-${lastIndex}`} className="text-sm">{highlightKeywords(line.substring(lastIndex), keywords)}</span>);
       }
       return <span>{parts}</span>;
     }
     
-    return <span>{highlightKeywords(line, keywords)}</span>;
+    return <span className="text-sm">{highlightKeywords(line, keywords)}</span>;
   }
   
   if (language === 'json') {
-    // JSON highlighting
+    // JSON highlighting with Monokai colors
     if (line.includes(':')) {
       const parts = line.split(':');
-      return <span>
-        <span className="text-[hsl(200,100%,70%)]">{parts[0]}</span>
+      return <span className="text-sm">
+        <span className="text-[hsl(197,71%,73%)]">{parts[0]}</span>
         <span className="text-foreground">:</span>
-        <span className="text-[hsl(120,100%,65%)]">{parts.slice(1).join(':')}</span>
+        <span className="text-[hsl(80,76%,53%)]">{parts.slice(1).join(':')}</span>
       </span>;
     }
   }
   
-  return <span className="text-foreground">{line}</span>;
+  return <span className="text-foreground text-sm">{line}</span>;
 };
 
 const highlightKeywords = (text: string, keywords: string[]): JSX.Element => {
@@ -97,7 +102,7 @@ const highlightKeywords = (text: string, keywords: string[]): JSX.Element => {
               if (match.index > lastIndex) {
                 newParts.push(part.substring(lastIndex, match.index));
               }
-              newParts.push(<span key={`kw-${keyword}-${i}`} className="text-[hsl(280,100%,70%)]">{match[0]}</span>);
+              newParts.push(<span key={`kw-${keyword}-${i}`} className="text-[hsl(326,100%,74%)]">{match[0]}</span>);
               lastIndex = match.index + match[0].length;
             }
           });
@@ -478,7 +483,7 @@ export function Editor({ activeFile }: EditorProps) {
             {lines.map((_, index) => (
               <div
                 key={index}
-                className="font-mono text-xs leading-6 text-muted-foreground"
+                className="font-mono text-[10px] leading-relaxed text-muted-foreground/60"
               >
                 {index + 1}
               </div>
@@ -493,7 +498,7 @@ export function Editor({ activeFile }: EditorProps) {
             transition={{ duration: 0.2 }}
             className="flex-1 py-4 px-4"
           >
-            <pre className="font-mono text-xs leading-6">
+            <pre className="font-mono leading-relaxed">
               {lines.map((line, index) => (
                 <div key={index} className="whitespace-pre-wrap">
                   <code>{highlightSyntax(line || ' ', file.language)}</code>
