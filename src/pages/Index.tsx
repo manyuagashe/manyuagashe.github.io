@@ -92,58 +92,55 @@ const Index = () => {
           </p>
         </motion.section>
 
-        {/* Education */}
+        {/* Skills */}
         <motion.section
-          id="education"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-6 border-t border-border"
+          className="py-4 border-t border-border"
         >
-          <h2 className="text-lg font-serif font-bold mb-4">Education</h2>
-          
-          <div className="space-y-1">
-            <h3 className="text-base font-bold text-accent">{education.institution}</h3>
-            <p className="text-sm">{education.degrees}</p>
-            <p className="text-muted-foreground text-sm">{education.duration} • GPA: {education.gpa}</p>
-            <p className="text-muted-foreground text-sm mt-2">{education.courses.join(" • ")}</p>
-          </div>
-          
-          <div className="mt-4">
-            <p className="text-sm text-muted-foreground">{skills.join(" • ")}</p>
-          </div>
+          <h2 className="text-sm font-medium text-muted-foreground mb-2">Skills</h2>
+          <p className="text-sm">{skills.join(" • ")}</p>
         </motion.section>
 
-        {/* Work */}
+        {/* Education & Work - Side by Side */}
         <motion.section
-          id="work"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="py-6 border-t border-border"
         >
-          <h2 className="text-lg font-serif font-bold mb-4">Work</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Education - Left */}
+            <div id="education">
+              <h2 className="text-lg font-serif font-bold mb-4">Education</h2>
+              <div className="space-y-1">
+                <h3 className="text-base font-bold text-accent">{education.institution}</h3>
+                <p className="text-sm">{education.degrees}</p>
+                <p className="text-muted-foreground text-sm">{education.duration} • GPA: {education.gpa}</p>
+                <p className="text-muted-foreground text-sm mt-2">{education.courses.join(" • ")}</p>
+              </div>
+            </div>
 
-          <div className="space-y-4">
-            {workExperiences.map((work, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-              >
-                <h3 className="text-base font-bold text-accent">{work.title}</h3>
-                <p className="text-muted-foreground text-sm mb-1">{work.org} • {work.period}</p>
-                <ul className="list-disc list-inside space-y-0.5 text-muted-foreground text-sm">
-                  {work.description.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+            {/* Work - Right */}
+            <div id="work">
+              <h2 className="text-lg font-serif font-bold mb-4">Work</h2>
+              <div className="space-y-4">
+                {workExperiences.map((work, index) => (
+                  <div key={index}>
+                    <h3 className="text-base font-bold text-accent">{work.title}</h3>
+                    <p className="text-muted-foreground text-sm mb-1">{work.org} • {work.period}</p>
+                    <ul className="list-disc list-inside space-y-0.5 text-muted-foreground text-sm">
+                      {work.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.section>
 
