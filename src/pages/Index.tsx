@@ -36,7 +36,7 @@ const workExperiences = [
 
 const education = {
   institution: "University of North Carolina at Chapel Hill",
-  degree: "B.S. Computer Science & Statistics",
+  degrees: "B.S. Statistics, B.A. Mathematics, Computer Science Minor",
   duration: "2022 - 2026",
   gpa: 3.83,
   courses: [
@@ -47,6 +47,8 @@ const education = {
     "Systems Fundamentals"
   ]
 };
+
+const skills = ["Python", "PyTorch", "SQL", "FastAPI", "SQLAlchemy", "C", "Java", "R"];
 
 const Index = () => {
   return (
@@ -68,24 +70,24 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 pt-24 pb-16">
+      <main className="max-w-4xl mx-auto px-6 pt-20 pb-8">
         {/* About */}
         <motion.section
           id="about"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="py-16"
+          className="py-8"
         >
-          <h1 className="text-4xl md:text-5xl font-serif mb-6">
-            Manyu Agashe
+          <h1 className="text-3xl md:text-4xl font-serif mb-3">
+            Abhimanyu Agashe
           </h1>
           
-          <p className="text-lg leading-relaxed mb-4">
+          <p className="text-base leading-relaxed mb-2">
             Statistics and computer science at UNC Chapel Hill. Research focus in LLMs and AI ethics.
           </p>
 
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Previously at UBS.
           </p>
         </motion.section>
@@ -97,20 +99,19 @@ const Index = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-16 border-t border-border"
+          className="py-6 border-t border-border"
         >
-          <h2 className="text-2xl font-serif font-bold mb-8">Education</h2>
+          <h2 className="text-lg font-serif font-bold mb-4">Education</h2>
           
-          <div className="space-y-2">
-            <h3 className="text-xl font-bold text-accent">{education.institution}</h3>
-            <p>{education.degree}</p>
-            <p className="text-muted-foreground">{education.duration} • GPA: {education.gpa}</p>
-            
-            <div className="mt-6">
-              <p className="text-muted-foreground">
-                {education.courses.join(" • ")}
-              </p>
-            </div>
+          <div className="space-y-1">
+            <h3 className="text-base font-bold text-accent">{education.institution}</h3>
+            <p className="text-sm">{education.degrees}</p>
+            <p className="text-muted-foreground text-sm">{education.duration} • GPA: {education.gpa}</p>
+            <p className="text-muted-foreground text-sm mt-2">{education.courses.join(" • ")}</p>
+          </div>
+          
+          <div className="mt-4">
+            <p className="text-sm text-muted-foreground">{skills.join(" • ")}</p>
           </div>
         </motion.section>
 
@@ -121,22 +122,22 @@ const Index = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-16 border-t border-border"
+          className="py-6 border-t border-border"
         >
-          <h2 className="text-2xl font-serif font-bold mb-8">Work</h2>
+          <h2 className="text-lg font-serif font-bold mb-4">Work</h2>
 
-          <div className="space-y-10">
+          <div className="space-y-4">
             {workExperiences.map((work, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <h3 className="text-xl font-bold text-accent">{work.title}</h3>
-                <p className="text-muted-foreground mb-3">{work.org} • {work.period}</p>
-                <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                <h3 className="text-base font-bold text-accent">{work.title}</h3>
+                <p className="text-muted-foreground text-sm mb-1">{work.org} • {work.period}</p>
+                <ul className="list-disc list-inside space-y-0.5 text-muted-foreground text-sm">
                   {work.description.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
@@ -153,15 +154,11 @@ const Index = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-16 border-t border-border"
+          className="py-6 border-t border-border"
         >
-          <h2 className="text-2xl font-serif font-bold mb-4">Research</h2>
-          <p className="text-lg mb-2">
-            LLM research and AI ethics.
-          </p>
-          <p className="text-muted-foreground">
-            Algorithmic fairness, transparency, privacy in AI systems.
-          </p>
+          <h2 className="text-lg font-serif font-bold mb-2">Research</h2>
+          <p className="text-sm">LLM research and AI ethics.</p>
+          <p className="text-muted-foreground text-sm">Algorithmic fairness, transparency, privacy in AI systems.</p>
         </motion.section>
 
         {/* Contact */}
@@ -171,16 +168,16 @@ const Index = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-16 border-t border-border"
+          className="py-6 border-t border-border"
         >
-          <div className="flex flex-wrap gap-6 text-sm">
+          <div className="flex flex-wrap gap-4 text-sm">
             <a href="mailto:manyu@unc.edu" className="text-accent hover:underline">manyu@unc.edu</a>
             <a href="https://github.com/manyu" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">github</a>
             <a href="https://linkedin.com/in/manyu" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">linkedin</a>
           </div>
         </motion.section>
 
-        <footer className="pt-16 border-t border-border text-center text-sm text-muted-foreground">
+        <footer className="pt-6 border-t border-border text-center text-xs text-muted-foreground">
           <p>abhimanyu dhananjay agashe, 2024</p>
         </footer>
       </main>
