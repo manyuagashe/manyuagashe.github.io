@@ -1,182 +1,211 @@
 import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
-
-const workExperiences = [
-  {
-    title: "Product Manager - New Software Projects",
-    org: "Office of Off Campus Student Life @UNC",
-    period: "Sep '25 - May '26",
-    description: [
-      "Creating and iterating on proposed software solution for party registration",
-      "Detailed design and feature research for product",
-      "Developing in Next.JS, FastAPI, Postgres, SQLAlchemy"
-    ]
-  },
-  {
-    title: "Teaching Assistant",
-    org: "UNC School of Data Science",
-    period: "Aug '25 - May '26",
-    description: [
-      "Review sessions for python and data science",
-      "1 on 1 debugging sessions",
-      "Creating and grading technical curriculum"
-    ]
-  },
-  {
-    title: "Undergraduate Researcher",
-    org: "Research Lab",
-    period: "2023 - Present",
-    description: [
-      "ML applications in data analysis",
-      "Published at undergraduate research symposium",
-      "Collaboration with graduate students and faculty"
-    ]
-  }
-];
-
-const education = {
-  institution: "University of North Carolina at Chapel Hill",
-  degrees: "B.S. Statistics, B.A. Mathematics, Computer Science Minor",
-  duration: "2022 - 2026",
-  gpa: 3.83,
-  courses: [
-    "Probability Theory",
-    "Machine Learning",
-    "Optimization",
-    "Design Patterns",
-    "Systems Fundamentals"
-  ]
-};
-
-const skills = ["Python", "PyTorch", "SQL", "FastAPI", "SQLAlchemy", "C", "Java", "R"];
+import { useState } from "react";
 
 const Index = () => {
+  const [hoveredWork, setHoveredWork] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-        <div className="max-w-4xl mx-auto px-6 py-3 flex justify-between items-center">
-          <nav className="flex gap-6 text-sm">
-            <a href="#about" className="text-accent hover:text-accent/80 transition-colors">about</a>
-            <a href="#education" className="text-muted-foreground hover:text-foreground transition-colors">education</a>
-            <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">work</a>
-            <a href="#research" className="text-muted-foreground hover:text-foreground transition-colors">research</a>
-          </nav>
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-            <a href="mailto:manyu@unc.edu" className="text-sm font-medium text-accent hover:underline">
-              manyu@unc.edu
-            </a>
-          </div>
-        </div>
-      </header>
+      <nav className="fixed top-6 right-6 z-50 flex items-center gap-3">
+        <ThemeToggle />
+        <motion.a
+          href="mailto:manyu@unc.edu"
+          className="text-sm text-accent hover:text-accent/70 transition-colors"
+          whileHover={{ scale: 1.05 }}
+        >
+          get in touch
+        </motion.a>
+      </nav>
 
-      <main className="max-w-4xl mx-auto px-6 pt-20 pb-8">
-        {/* About */}
+      <main className="max-w-6xl mx-auto px-6 md:px-12 pt-24 pb-16">
         <motion.section
-          id="about"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="py-8"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="min-h-[60vh] flex flex-col justify-center mb-24"
         >
-          <h1 className="text-3xl md:text-4xl font-serif mb-3">
-            Abhimanyu Agashe
+          <h1 className="text-5xl md:text-7xl font-serif mb-6 tracking-tight">
+            Abhimanyu<br />Agashe
           </h1>
-          
-          <p className="text-base leading-relaxed mb-2">
-            Statistics and computer science at UNC Chapel Hill. Research focus in LLMs and AI ethics.
-          </p>
 
-          <p className="text-muted-foreground text-sm">
-            Previously at UBS.
-          </p>
+          <div className="max-w-2xl space-y-4">
+            <p className="text-lg md:text-xl leading-relaxed">
+              Building at the intersection of statistics, computation, and ethics.
+            </p>
+
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Student researcher at UNC Chapel Hill exploring LLMs and AI alignment.
+              Previously engineering data systems at UBS.
+            </p>
+          </div>
         </motion.section>
 
-        {/* Skills */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="py-4 border-t border-border"
-        >
-          <h2 className="text-sm font-medium text-muted-foreground mb-2">Skills</h2>
-          <p className="text-sm">{skills.join(" • ")}</p>
-        </motion.section>
+        <div className="grid md:grid-cols-12 gap-12 md:gap-16 mb-24">
+          <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="md:col-span-7 space-y-12"
+          >
+            <div>
+              <h2 className="text-xs uppercase tracking-wider text-muted-foreground mb-8">Currently</h2>
+              <div className="space-y-10">
+                <motion.div
+                  onHoverStart={() => setHoveredWork(0)}
+                  onHoverEnd={() => setHoveredWork(null)}
+                  className="group cursor-default"
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-lg font-medium transition-colors group-hover:text-accent">
+                      Product Manager
+                    </h3>
+                    <span className="text-sm text-muted-foreground">2025</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Office of Off Campus Student Life, UNC
+                  </p>
+                  <motion.p
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{
+                      height: hoveredWork === 0 ? "auto" : 0,
+                      opacity: hoveredWork === 0 ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="text-sm leading-relaxed overflow-hidden"
+                  >
+                    Leading software development for student registration systems.
+                    Managing feature design and technical architecture with Next.js, FastAPI, and PostgreSQL.
+                  </motion.p>
+                </motion.div>
 
-        {/* Education & Work - Side by Side */}
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="py-6 border-t border-border"
-        >
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Education - Left */}
-            <div id="education">
-              <h2 className="text-lg font-serif font-bold mb-4">Education</h2>
-              <div className="space-y-1">
-                <h3 className="text-base font-bold text-accent">{education.institution}</h3>
-                <p className="text-sm">{education.degrees}</p>
-                <p className="text-muted-foreground text-sm">{education.duration} • GPA: {education.gpa}</p>
-                <p className="text-muted-foreground text-sm mt-2">{education.courses.join(" • ")}</p>
+                <motion.div
+                  onHoverStart={() => setHoveredWork(1)}
+                  onHoverEnd={() => setHoveredWork(null)}
+                  className="group cursor-default"
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-lg font-medium transition-colors group-hover:text-accent">
+                      Teaching Assistant
+                    </h3>
+                    <span className="text-sm text-muted-foreground">2025</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    School of Data Science, UNC
+                  </p>
+                  <motion.p
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{
+                      height: hoveredWork === 1 ? "auto" : 0,
+                      opacity: hoveredWork === 1 ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="text-sm leading-relaxed overflow-hidden"
+                  >
+                    Designing curriculum and leading technical sessions in Python and data science.
+                    Supporting students through debugging sessions and code reviews.
+                  </motion.p>
+                </motion.div>
+
+                <motion.div
+                  onHoverStart={() => setHoveredWork(2)}
+                  onHoverEnd={() => setHoveredWork(null)}
+                  className="group cursor-default"
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-lg font-medium transition-colors group-hover:text-accent">
+                      Research
+                    </h3>
+                    <span className="text-sm text-muted-foreground">Ongoing</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    AI Ethics & Alignment
+                  </p>
+                  <motion.p
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{
+                      height: hoveredWork === 2 ? "auto" : 0,
+                      opacity: hoveredWork === 2 ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="text-sm leading-relaxed overflow-hidden"
+                  >
+                    Exploring algorithmic fairness, transparency, and privacy in AI systems.
+                    Focus on LLM alignment and ethical deployment frameworks.
+                  </motion.p>
+                </motion.div>
               </div>
             </div>
+          </motion.section>
 
-            {/* Work - Right */}
-            <div id="work">
-              <h2 className="text-lg font-serif font-bold mb-4">Work</h2>
-              <div className="space-y-4">
-                {workExperiences.map((work, index) => (
-                  <div key={index}>
-                    <h3 className="text-base font-bold text-accent">{work.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-1">{work.org} • {work.period}</p>
-                    <ul className="list-disc list-inside space-y-0.5 text-muted-foreground text-sm">
-                      {work.description.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
+          <motion.aside
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="md:col-span-5 space-y-12"
+          >
+            <div>
+              <h2 className="text-xs uppercase tracking-wider text-muted-foreground mb-6">Education</h2>
+              <p className="text-base mb-2">
+                University of North Carolina<br />at Chapel Hill
+              </p>
+              <p className="text-sm text-muted-foreground mb-2">
+                Statistics, Mathematics, CS
+              </p>
+              <p className="text-sm text-muted-foreground">
+                2022—2026
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-xs uppercase tracking-wider text-muted-foreground mb-6">Tools</h2>
+              <div className="flex flex-wrap gap-2">
+                {["Python", "PyTorch", "SQL", "FastAPI", "C", "Java", "R"].map((skill) => (
+                  <motion.span
+                    key={skill}
+                    whileHover={{ scale: 1.1 }}
+                    className="text-sm px-3 py-1 border border-border rounded-full hover:border-accent transition-colors"
+                  >
+                    {skill}
+                  </motion.span>
                 ))}
               </div>
             </div>
-          </div>
-        </motion.section>
 
-        {/* Research */}
-        <motion.section
-          id="research"
+            <div>
+              <h2 className="text-xs uppercase tracking-wider text-muted-foreground mb-6">Interests</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Competitive Pokemon, Indian classical music, industrial design,
+                organizational systems, John Doerr's OKRs
+              </p>
+            </div>
+          </motion.aside>
+        </div>
+
+        <motion.footer
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-6 border-t border-border"
+          className="border-t border-border pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
         >
-          <h2 className="text-lg font-serif font-bold mb-2">Research</h2>
-          <p className="text-sm">LLM research and AI ethics.</p>
-          <p className="text-muted-foreground text-sm">Algorithmic fairness, transparency, privacy in AI systems.</p>
-        </motion.section>
-
-        {/* Contact */}
-        <motion.section
-          id="contact"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="py-6 border-t border-border"
-        >
-          <div className="flex flex-wrap gap-4 text-sm">
-            <a href="mailto:manyu@unc.edu" className="text-accent hover:underline">manyu@unc.edu</a>
-            <a href="https://github.com/manyu" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">github</a>
-            <a href="https://linkedin.com/in/manyu" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">linkedin</a>
+          <div className="flex gap-6 text-sm">
+            <a href="mailto:manyu@unc.edu" className="text-accent hover:text-accent/70 transition-colors">
+              email
+            </a>
+            <a href="https://github.com/manyuagashe" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/70 transition-colors">
+              github
+            </a>
+            <a href="https://www.linkedin.com/in/abhimanyu-agashe-95598622a/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/70 transition-colors">
+              linkedin
+            </a>
           </div>
-        </motion.section>
-
-        <footer className="pt-6 border-t border-border text-center text-xs text-muted-foreground">
-          <p>abhimanyu dhananjay agashe, 2024</p>
-        </footer>
+          <p className="text-xs text-muted-foreground">
+            2025
+          </p>
+        </motion.footer>
       </main>
     </div>
   );
