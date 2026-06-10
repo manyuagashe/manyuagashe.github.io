@@ -7,8 +7,7 @@ const Index = () => {
 
         <h2 className="text-2xl font-bold mb-5">experience</h2>
         <ul className="list-disc pl-6 space-y-2 text-base">
-          <li>software development</li>
-          <li>analyst intern, ubs group ag — group data management office (summer 2025)</li>
+          <li>software development analyst intern, ubs group ag — group data management office (summer 2025)</li>
           <li>teaching assistant, unc — intro to data science, ethics of data science</li>
           <li>product manager, unc off campus student life — party registration platform</li>
           <li>student researcher, unc school of data science and society — nlp / ai alignment</li>
@@ -17,9 +16,9 @@ const Index = () => {
 
         <h2 className="text-2xl font-bold mt-16 mb-5">hackathon wins</h2>
         <ul className="list-disc pl-6 space-y-2 text-base">
-          <li>win #1 — [details tbd]</li>
-          <li>win #2 — [details tbd]</li>
-          <li>win #3 — [details tbd]</li>
+          <li>win #1 — ai pentester for smaller startups to handle cybersec needs via a pentesting agent swarm</li>
+          <li>win #2 — ai cfo for smb's that proactively calls and texts you and integrates with fintech accounts</li>
+          <li>win #3 — quantum solution for last mile delivery optimization problem</li>
         </ul>
 
         <h2 className="text-2xl font-bold mt-16 mb-5">research interests</h2>
