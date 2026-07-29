@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Index = () => {
+
   return (
     <div className="min-h-screen bg-white text-black" style={{ fontFamily: '"Apple Garamond", Garamond, "Times New Roman", serif' }}>
       <main className="max-w-2xl mx-auto px-6 py-20">
