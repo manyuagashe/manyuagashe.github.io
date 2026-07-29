@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Index = () => {
+
   return (
     <div className="min-h-screen bg-white text-black" style={{ fontFamily: '"Apple Garamond", Garamond, "Times New Roman", serif' }}>
       <main className="max-w-2xl mx-auto px-6 py-20">
@@ -29,12 +32,18 @@ const Index = () => {
           <li>win #3 — quantum solution for last mile delivery optimization problem</li>
         </ul>
 
+        <h2 className="text-2xl font-bold mt-16 mb-5">writing</h2>
+        <p className="text-base">
+          <Link to="/blog" className="underline">blog</Link>
+        </p>
+
         <h2 className="text-2xl font-bold mt-16 mb-5">contact</h2>
         <p className="text-base">
           <a href="mailto:manyu@unc.edu" className="underline">manyu@unc.edu</a> ·{" "}
           <a href="https://github.com/manyuagashe" className="underline">github</a> ·{" "}
           <a href="https://linkedin.com/in/abhimanyuagashe" className="underline">linkedin</a>
         </p>
+
       </main>
     </div>
   );
